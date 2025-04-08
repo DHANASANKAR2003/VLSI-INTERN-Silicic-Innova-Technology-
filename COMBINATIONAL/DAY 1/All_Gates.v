@@ -15,10 +15,6 @@ module all_gates(
 endmodule
 
 //Testbench Code
-// Code your testbench here
-// or browse Examples
-// Code your testbench here
-// or browse Examples
 module all_gates_tb();
   reg a,b;
   wire and_gate,or_gate,nand_gate,nor_gate,xor_gate,xnor_gate,a_not,b_not;
