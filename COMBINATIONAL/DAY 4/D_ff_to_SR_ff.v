@@ -6,23 +6,18 @@ module d_ff_to_sr_ff(
   wire d,nand1,not1;
   
   assign qn = ~q;
-  assign d = nand1 | s;
-  assign not1 = r;
-  assign  nand1 = q & not1;
+  assign d = (s & ~r) ? 1'b1 :         // Set
+           (~s & r) ? 1'b0 :         // Reset
+           (s & r) ? 1'bx :          // Invalid
+           q;                       // Hold (s = 0, r = 0)
+
   
   always@(posedge clk or posedge rst)
     begin
       if(rst)
         q <= 0;
       else 
-        begin
-          case({s,r})
-            2'b00:q <= q;
-            2'b01:q <= 0;
-            2'b10:q <= 1;
-            2'b11:q <= 1'bx;
-          endcase
-        end
+        q <= d;
     end
 endmodule
 
