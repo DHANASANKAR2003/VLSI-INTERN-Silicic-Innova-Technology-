@@ -58,7 +58,7 @@ Larger modules that combine combinational/sequential logic for specific applicat
 ## 👨‍💻 Author
 
 **DHANASANKAR K**  
-🔗 [GitHub] ([https://github.com/yourusername](https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/COMBINATIONAL))  
-🔗 [LinkedIn](www.linkedin.com/in/dhanasankar-k-23b196291)  
+🔗 GitHub: ([https://github.com/yourusername](https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/COMBINATIONAL))  
+🔗 LinkedIn: (www.linkedin.com/in/dhanasankar-k-23b196291)  
 
 
