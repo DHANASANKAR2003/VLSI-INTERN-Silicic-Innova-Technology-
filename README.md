@@ -1,4 +1,4 @@
-# 🔧 Verilog Projects
+# 🔧 Verilog Achievements
 
 This repository includes a variety of **Verilog programs** grouped into:
 
