@@ -108,7 +108,7 @@ By simulating in Verilog and processing with Python, you can test the design tho
 ## 👨‍💻 Author
    This project was designed for **educational use** and **FPGA simulation**, showcasing how to integrate **Python and Verilog** for real-time digital image processing using the Sobel edge detection algorithm.
    ### Created by: DHANASANKAR K
-   🔗 [LinkedIn](www.linkedin.com/in/dhanasankar-k-23b196291)
+   🔗 LinkedIn: (www.linkedin.com/in/dhanasankar-k-23b196291)
 
 
 
