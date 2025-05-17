@@ -1,8 +1,8 @@
-# I2C Master FSM in Verilog
+# I2C Master-Slave Communication in Verilog
 
 ## 🧠 Project Overview
 
-This project implements a Finite State Machine (FSM)-based I2C Master using Verilog HDL. The FSM handles standard I2C protocol operations including:
+This project implements a Finite State Machine (FSM)-based I2C Master and slave using Verilog. The FSM handles standard I2C protocol operations including:
 - Start condition
 - Slave addressing
 - Read/Write bit transmission
@@ -56,7 +56,11 @@ This waveform demonstrates a successful I2C write operation:
 <img width="1414" alt="Screenshot 2025-05-17 at 4 20 36 PM" src="https://github.com/user-attachments/assets/9d518bd1-c1fe-4b73-9d4d-1afc4ccd4b86" />
 
 ---
-## 🌊 Output
+## 🌊 Sample Waveform for master and slave communication
+<img width="1415" alt="Screenshot 2025-05-17 at 4 34 50 PM" src="https://github.com/user-attachments/assets/a6ea6d07-0cf5-4a97-953f-a1349855fe80" />
+
+---
+## 🌊 Output for master 
 ```
 VCD info: dumpfile i2c_master.vcd opened for output.
 ==== Initializing Test ====
@@ -115,6 +119,13 @@ Finding VCD file...
 ./i2c_master.vcd
 ```
 ---
+## 🌊 Output for master and slave
+```
+design.sv:1: ...: The inherited timescale is here.
+VCD info: dumpfile i2c_master_slave.vcd opened for output.
+I2C Master-Slave Write Test Complete.
+testbench.sv:48: $finish called at 2200000 (1ps)
+```
 ## 🧪 Running the Simulation
 
 ### 🔧 Requirements
