@@ -1,3 +1,4 @@
+2. Design a 4-bit Arithmetic Logic Unit (ALU) using structural modeling.
 //Design Code
 // Full Structural 4-bit ALU Verilog Code
 // 1. Full Adder Module
