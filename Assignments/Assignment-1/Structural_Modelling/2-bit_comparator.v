@@ -1,3 +1,6 @@
+1. Design a 2-bit comparator using basic gates (AND, OR, NOT) to compare two 2-bit
+numbers A and B. The output should indicate if A == B, A > B, or A < B.
+    
 // Boolean Equations
 //A_eq_B = A1_XNOR_B1 AND A0_XNOR_B0
 
