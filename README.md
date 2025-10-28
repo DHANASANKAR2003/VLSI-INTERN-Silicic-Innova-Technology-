@@ -8,6 +8,7 @@
 ![GTKWave](https://img.shields.io/badge/Tool-GTKWave-purple)
 ![Icarus](https://img.shields.io/badge/Simulator-Icarus%20Verilog-brightgreen)
 
+
 ---
 
 ## 🚀 Overview
