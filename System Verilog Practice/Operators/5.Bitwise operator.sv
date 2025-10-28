@@ -1,4 +1,5 @@
 
+
 module bitwise_code;
   logic[0:3]a,b,x,y,c;
   initial begin
@@ -50,5 +51,3 @@ the value of a is 1101
  	 the bitwise NAND ~(a&b) operator output is 1010
 
  	 the bitwise NOR ~(b|a) operator output is 10
-
- 	 the bitwise XNOR ~(a^b) operator output is 111
