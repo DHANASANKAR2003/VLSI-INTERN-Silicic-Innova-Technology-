@@ -1,40 +1,44 @@
+
+
 # 🧠 VLSI Design & Verification Repository
 
 <p align="center">
   <a href="https://dhanasankar2003.github.io/dhanasankar.github.io/">
-    <img src="https://img.shields.io/badge/🌐_My%20Portfolio-Visit%20Now-blue?style=for-the-badge" />
-  </a>
-  <br><br>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/Assignments">
-    <img src="https://img.shields.io/badge/📘_Verilog%20Assignments-Explore-blue?style=for-the-badge" />
-  </a>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/COMBINATIONAL">
-    <img src="https://img.shields.io/badge/⚙️_Combinational%20Circuits-Verilog%20Code-orange?style=for-the-badge" />
-  </a>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/System%20Verilog">
-    <img src="https://img.shields.io/badge/💡_SystemVerilog%20Designs-Code-yellow?style=for-the-badge" />
-  </a>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/System%20Verilog%20Practice">
-    <img src="https://img.shields.io/badge/🧩_SystemVerilog%20Practice-Examples-green?style=for-the-badge" />
-  </a>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/Functional%20Verification%20Using%20System%20Verilog">
-    <img src="https://img.shields.io/badge/🔬_Functional%20Verification-UVM%20Based-red?style=for-the-badge" />
-  </a>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/HDL_Bits">
-    <img src="https://img.shields.io/badge/💻_HDLBits-Practice%20Problems-purple?style=for-the-badge" />
-  </a>
-
-  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/Verilog%20Project">
-    <img src="https://img.shields.io/badge/🚀_Verilog%20Projects-Real%20Time%20Designs-brightgreen?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/🌐_My%20website-Visit%20Now-1DA1F2?style=flat&logo=google-chrome&logoColor=white&labelColor=0D1117&color=1DA1F2&borderRadius=20" />
   </a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/Assignments">
+    <img src="https://img.shields.io/badge/📘_Verilog%20Assignments-Explore-0078D7?style=flat&logo=verilog&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+  
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/COMBINATIONAL">
+    <img src="https://img.shields.io/badge/⚙️_Combinational%20%26%20Sequential-Verilog%20Code-FF9800?style=flat&logo=c&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/System%20Verilog">
+    <img src="https://img.shields.io/badge/💡_SystemVerilog-Designs-FAB005?style=flat&logo=google-cloud&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/System%20Verilog%20Practice">
+    <img src="https://img.shields.io/badge/🧩_SystemVerilog-Practice-4CAF50?style=flat&logo=hackerrank&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/Functional%20Verification%20Using%20System%20Verilog">
+    <img src="https://img.shields.io/badge/🔬_Functional%20Verification-UVM%20Based-E91E63?style=flat&logo=checkmarx&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/HDL_Bits">
+    <img src="https://img.shields.io/badge/💻_HDLBits-Practice%20Problems-9C27B0?style=flat&logo=codeforces&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+
+  <a href="https://github.com/DHANASANKAR2003/VLSI-INTERN-Silicic-Innova-Technology-/tree/main/Verilog%20Project">
+    <img src="https://img.shields.io/badge/🚀_Verilog%20Projects-Real%20Time%20Designs-00C853?style=flat&logo=rocket&logoColor=white&labelColor=0D1117&borderRadius=20" />
+  </a>
+</p>
+
+<br>
 
 ---
 
@@ -225,14 +229,38 @@ This repository demonstrates **academic learning + professional-level project ex
 
 ## 👨‍💻 Author
 
-**DHANASANKAR K**  
-🎓 Electronics & Communication Engineering  
+<div align="center" style="background: #f9f9f9; border-radius: 20px; padding: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.1); width: 80%; margin: auto;">
+
+<h3 style="color:#2E3A59;">✨ <b>DHANASANKAR K</b></h3>
+
+🎓 <b>Electronics & Communication Engineering</b>  
 💼 FPGA | Digital Design | SystemVerilog | UVM | Image Processing  
 
-🔗 **GitHub:** [Dhanasankar2003](https://github.com/DHANASANKAR2003)  
-🔗 **LinkedIn:** [linkedin.com/in/dhanasankar-k-23b196291](https://www.linkedin.com/in/dhanasankar-k-23b196291)
+---
+
+<p align="center">
+  <a href="https://dhanasankar2003.github.io/dhanasankar.github.io/">
+    <img src="https://img.shields.io/badge/🌐 My%20website-Visit%20Now-00C853?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=0D1117&color=00C853" style="border-radius:25px; margin:6px;" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/DHANASANKAR2003">
+    <img src="https://img.shields.io/badge/GitHub-Dhanasankar2003-171515?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" style="border-radius:25px; margin:6px;" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/dhanasankar-k-23b196291">
+    <img src="https://img.shields.io/badge/LinkedIn-Dhanasankar%20K-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0D1117" style="border-radius:25px; margin:6px;" />
+  </a>
+</p>
+
+</div>
 
 ---
+
+
 
 ## 🌟 Acknowledgment
 
