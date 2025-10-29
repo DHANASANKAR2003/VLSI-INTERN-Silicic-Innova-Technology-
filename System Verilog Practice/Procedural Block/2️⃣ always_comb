@@ -1,0 +1,28 @@
+module always_combinational;
+  logic signed [3:0] a,b;
+  int sel;
+  //logic [4:0] out;
+  
+  initial begin 
+    a = 4'd5;
+    b = 4'd10;
+    sel = 1'b1;
+    #10;
+    a = 4'd5;
+    b = 4'd10;
+    sel = 1'b0;
+  end
+  
+  always_comb begin
+    if(sel) begin
+      $display("Adder of (a + b) is %0d",a+b);
+    end
+    else
+      $display("Subtraction of (a - b) is %0d",b-a);
+  end
+endmodule
+
+OUTPUT
+
+Adder of (a + b) is 1111
+Subtraction of (a - b) is 5
