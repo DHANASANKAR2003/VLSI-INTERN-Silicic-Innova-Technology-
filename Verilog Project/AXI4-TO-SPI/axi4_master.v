@@ -127,9 +127,9 @@ module axi4_master #(
             M_ARVALID <= 1'b0;
         end else begin
             if (state == IDLE && next_state == RADDR_CHANNEL) begin
-                M_ARADDR <= stored_addr;
-                M_ARID <= stored_id;
-                M_ARLEN <= stored_len;
+                M_ARADDR <= address;
+                M_ARID <= axi_id;
+                M_ARLEN <= burst_len;
                 M_ARVALID <= 1'b1;
             end else if (state == RADDR_CHANNEL && M_ARREADY) begin
                 M_ARVALID <= 1'b0;
@@ -155,9 +155,9 @@ module axi4_master #(
             M_AWVALID <= 1'b0;
         end else begin
             if (state == IDLE && next_state == WRITE_ADDR) begin
-                M_AWADDR <= stored_addr;
-                M_AWID <= stored_id;
-                M_AWLEN <= stored_len;
+                M_AWADDR <= address;
+                M_AWID <= axi_id;
+                M_AWLEN <= burst_len;
                 M_AWVALID <= 1'b1;
             end else if (state == WRITE_ADDR && M_AWREADY) begin
                 M_AWVALID <= 1'b0;
