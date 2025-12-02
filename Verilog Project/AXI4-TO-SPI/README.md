@@ -1,6 +1,6 @@
 <div style="font-family: 'Times New Roman', Times, serif; color: #000000;">
 
-# AXI4 to SPI Bridge Verification Project
+# AXI4 to SPI Bridge RTL Design
 ---
 
 ## 1. Project Title and Overview
