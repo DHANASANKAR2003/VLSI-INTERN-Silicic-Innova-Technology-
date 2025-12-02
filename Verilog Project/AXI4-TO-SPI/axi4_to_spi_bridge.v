@@ -1,8 +1,9 @@
-`timescale 1ns/1ps
 `include "async_fifo.v"
 
+`timescale 1ns/1ps
+
 // ============================================================================
-// AXI4 TO SPI BRIDGE - FIXED VERSION
+// AXI4 TO SPI BRIDGE - WORKING VERSION
 // ============================================================================
 module axi4_to_spi_bridge #(
     parameter DATA_WIDTH = 32,
@@ -176,14 +177,14 @@ module axi4_to_spi_bridge #(
     assign b_wr_data = {wr_curr_id, spi_resp};
     assign r_wr_data = {(rd_beat_counter == rd_curr_len), rd_curr_id, spi_resp, spi_rd_data};
 
-    // Write FSM - FIXED
-    localparam WR_IDLE      = 3'd0;
-    localparam WR_GET_AW    = 3'd1;
-    localparam WR_WAIT_W    = 3'd2;
-    localparam WR_GET_W     = 3'd3;
-    localparam WR_SPI_REQ   = 3'd4;
-    localparam WR_SPI_WAIT  = 3'd5;
-    localparam WR_SEND_RESP = 3'd6;
+    // Write FSM - WORKING VERSION
+    localparam WR_IDLE       = 3'd0;
+    localparam WR_GET_AW     = 3'd1;
+    localparam WR_WAIT_W     = 3'd2;  // KEY: Wait one cycle after reading AW
+    localparam WR_GET_W      = 3'd3;
+    localparam WR_SPI_REQ    = 3'd4;
+    localparam WR_SPI_WAIT   = 3'd5;
+    localparam WR_SEND_RESP  = 3'd6;
     localparam WR_WAIT_FOR_W = 3'd7;
 
     reg [2:0] wr_state;
@@ -239,11 +240,11 @@ module axi4_to_spi_bridge #(
                     wr_beat_counter <= 8'd0;
                     
                     aw_rd_en <= 1'b1;
-                    wr_state <= WR_WAIT_W;
+                    wr_state <= WR_WAIT_W;  // KEY: Wait one cycle!
                 end
 
                 WR_WAIT_W: begin
-                    wr_state <= WR_GET_W;
+                    wr_state <= WR_GET_W;  // Then proceed
                 end
 
                 WR_GET_W: begin
