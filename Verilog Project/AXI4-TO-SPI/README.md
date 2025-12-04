@@ -820,12 +820,7 @@ testbench.sv:400: $finish called at 622250000 (1ps)
 
 ---
 
-## 16. License
-This project is open-source and available under the **MIT License**.
-
----
-
-## 17. Credits
+## 16. Credits
 **Developed by:** DHANASANKAR BE-ECE
 
 **Mentor :** Swami, Ph.D, iFellow ., – Silicon Craft VLSI  
