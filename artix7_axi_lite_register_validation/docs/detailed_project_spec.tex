@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={AXI-Lite Register Validation Specification},
+    pdfpagemode=FullScreen,
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{AXI-Lite Register Validation Specification\\
+\large Lenseup EDGE Artix-7 FPGA Development Board Implementation}
+\author{Post-Silicon Verification Team}
+\date{June 24, 2026}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{System Overview}
+The AXI-Lite Register Validation system implements an automated framework for testing registers inside the Xilinx Artix-7 FPGA chip. The primary goal is to bridge high-level Python verification scripts on a host computer to physical AXI-Lite registers on the hardware target over a single micro-USB serial link.
+
+\section{Hardware and Port Configuration}
+The hardware utilizes the following clocking, reset, and serial properties:
+\begin{itemize}
+    \item \textbf{FPGA Target}: Xilinx Artix-7 \texttt{xc7a35tftg256-1}.
+    \item \textbf{Oscillator}: 50 MHz clock signal routed to Pin \texttt{N11}.
+    \item \textbf{Reset Layout}: Active-high push button (\texttt{pb[4]}) on Pin \texttt{M14}. It is logically inverted to active-low (\texttt{rst\_n}) in the top-level Verilog wrapper.
+    \item \textbf{Baud Rate}: 115,200 bps.
+    \item \textbf{UART Physical Pins}: Receive (RX) connected to Pin \texttt{D4}; Transmit (TX) connected to Pin \texttt{C4}.
+\end{itemize}
+
+\section{Serial Command Framing Protocol}
+Communication between the host and the FPGA is based on packet transactions:
+
+\subsection{Write Request and Response (Opcode: 'W' / 0x57)}
+The host writes a 32-bit word using a 9-byte command frame, and receives a 6-byte response:
+\begin{lstlisting}[language=bash, caption=Write Serial Packets]
+# Request (9 bytes): [0x57] [Addr31:24] [Addr23:16] [Addr15:8] [Addr7:0] [Data31:24] [Data23:16] [Data15:8] [Data7:0]
+# Example: Write 0xDEADBEEF to Address 0x0000000C (SCRATCH Register)
+0x57 0x00 0x00 0x00 0x0C 0xDE 0xAD 0xBE 0xEF
+
+# Response (6 bytes): [Status] [Data31:24] [Data23:16] [Data15:8] [Data7:0] [0x57]
+0x00 0xDE 0xAD 0xBE 0xEF 0x57
+\end{lstlisting}
+
+\subsection{Read Request and Response (Opcode: 'R' / 0x52)}
+The host reads a 32-bit word using a 5-byte command frame, and receives a 6-byte response:
+\begin{lstlisting}[language=bash, caption=Read Serial Packets]
+# Request (5 bytes): [0x52] [Addr31:24] [Addr23:16] [Addr15:8] [Addr7:0]
+# Example: Read Address 0x00000100 (DEVICE_ID Register)
+0x52 0x00 0x00 0x01 0x00
+
+# Response (6 bytes): [Status] [Data31:24] [Data23:16] [Data15:8] [Data7:0] [0x52]
+0x00 0xA5 0xA5 0x00 0x09 0x52
+\end{lstlisting}
+
+\newpage
+
+\section{AXI-Lite Register Addressing}
+The interconnect routes transactions based on three base blocks. Address bits \texttt{[3:2]} are decoded at each slave interface (address folding), word-aligning all offsets automatically.
+
+\begin{table}[h]
+\centering
+\caption{System Register Definitions}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+\textbf{Block} & \textbf{Base Address} & \textbf{Register} & \textbf{Offset} & \textbf{Mode} & \textbf{Reset Value} \\ \midrule
+\textbf{gpio}  & \texttt{0x00000000}    & \texttt{GPIO\_OUT} & \texttt{0x00}   & RW            & \texttt{0x00000000}  \\
+               &                        & \texttt{GPIO\_IN}  & \texttt{0x04}   & RO            & \texttt{0x00000000}  \\
+               &                        & \texttt{GPIO\_DIR} & \texttt{0x08}   & RW            & \texttt{0x00000000}  \\
+               &                        & \texttt{SCRATCH}   & \texttt{0x0C}   & RW            & \texttt{0x00000000}  \\ \midrule
+\textbf{status}& \texttt{0x00000100}    & \texttt{DEVICE\_ID}& \texttt{0x00}   & RO            & \texttt{0xA5A50009}  \\
+               &                        & \texttt{STATUS\_FLAGS}& \texttt{0x04}& RO            & \texttt{0x00000000}  \\
+               &                        & \texttt{ERROR\_CLEAR}& \texttt{0x08} & WO            & \texttt{0x00000000}  \\
+               &                        & \texttt{VERSION}   & \texttt{0x0C}   & RO            & \texttt{0x00010000}  \\ \midrule
+\textbf{timer} & \texttt{0x00000200}    & \texttt{TIMER\_CTRL}& \texttt{0x00}  & RW            & \texttt{0x00000000}  \\
+               &                        & \texttt{TIMER\_COUNT}& \texttt{0x04} & RO            & \texttt{0x00000000}  \\
+               &                        & \texttt{TIMER\_LIMIT}& \texttt{0x08} & RW            & \texttt{0x00000000}  \\
+               &                        & \texttt{TIMER\_STATUS}& \texttt{0x0C}& RO            & \texttt{0x00000000}  \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{AXI-Lite Bus Handshaking Channels}
+All transfers are completed via \texttt{VALID}/\texttt{READY} handshakes across 5 channels:
+\begin{itemize}
+    \item \textbf{AW Channel}: \texttt{s\_axi\_awaddr}, \texttt{s\_axi\_awvalid}, and \texttt{s\_axi\_awready}.
+    \item \textbf{W Channel}: \texttt{s\_axi\_wdata}, \texttt{s\_axi\_wstrb}, \texttt{s\_axi\_wvalid}, and \texttt{s\_axi\_wready}.
+    \item \textbf{B Channel}: \texttt{s\_axi\_bresp}, \texttt{s\_axi\_bvalid}, and \texttt{s\_axi\_bready}.
+    \item \textbf{AR Channel}: \texttt{s\_axi\_araddr}, \texttt{s\_axi\_arvalid}, and \texttt{s\_axi\_arready}.
+    \item \textbf{R Channel}: \texttt{s\_axi\_rdata}, \texttt{s\_axi\_rresp}, \texttt{s\_axi\_rvalid}, and \texttt{s\_axi\_rready}.
+\end{itemize}
+
+\section{Passive Hardware Monitors}
+The design incorporates internal passive monitors to aid validation:
+\begin{itemize}
+    \item \textbf{Protocol Checker}: Latches protocol checker violations on handshaking stability to status flag bit 0.
+    \item \textbf{Access Monitor}: Counts read and write bus cycles and logs the address of the last transaction.
+    \item \textbf{Reset Recovery Monitor}: Monitors stabilization windows after a hard reset, raising a flag if a transaction is initiated too early.
+\end{itemize}
+
+\end{document}

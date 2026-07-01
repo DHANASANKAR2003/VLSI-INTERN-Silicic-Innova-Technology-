@@ -1,0 +1,8 @@
+# board_config.yaml
+# UART configurations for physical/simulated board access
+
+serial:
+  port: "/dev/tty.usbserial-10"   # Change to matching FPGA UART interface port on your system
+  baudrate: 115200
+  timeout: 1.0
+  mock_mode: true                 # Set to false to communicate with physical hardware

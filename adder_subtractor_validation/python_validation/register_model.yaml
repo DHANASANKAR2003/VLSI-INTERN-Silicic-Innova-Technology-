@@ -1,0 +1,4110 @@
+protocol:
+  inputs:
+  - name: OP_A
+    bytes: 1
+  - name: OP_B
+    bytes: 1
+  - name: CTRL
+    bytes: 1
+  outputs:
+  - name: RESULT
+    bytes: 1
+  - name: CARRY_BORROW
+    bytes: 1
+test_vectors:
+- id: TC-ADD-001
+  a: 8'b00111001
+  b: 8'b00001100
+  ctrl: 1'b0
+  exp_res: 8'b01000101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 57 + 12'
+- id: TC-ADD-002
+  a: 8'b10001100
+  b: 8'b01111101
+  ctrl: 1'b0
+  exp_res: 8'b00001001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 140 + 125'
+- id: TC-ADD-003
+  a: 8'b01110010
+  b: 8'b01000111
+  ctrl: 1'b0
+  exp_res: 8'b10111001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 114 + 71'
+- id: TC-ADD-004
+  a: 8'b00110100
+  b: 8'b00101100
+  ctrl: 1'b0
+  exp_res: 8'b01100000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 52 + 44'
+- id: TC-ADD-005
+  a: 8'b11011000
+  b: 8'b00010000
+  ctrl: 1'b0
+  exp_res: 8'b11101000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 216 + 16'
+- id: TC-ADD-006
+  a: 8'b00001111
+  b: 8'b00101111
+  ctrl: 1'b0
+  exp_res: 8'b00111110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 15 + 47'
+- id: TC-ADD-007
+  a: 8'b01101111
+  b: 8'b01110111
+  ctrl: 1'b0
+  exp_res: 8'b11100110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 111 + 119'
+- id: TC-ADD-008
+  a: 8'b00001101
+  b: 8'b01100101
+  ctrl: 1'b0
+  exp_res: 8'b01110010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 13 + 101'
+- id: TC-ADD-009
+  a: 8'b11010110
+  b: 8'b01110000
+  ctrl: 1'b0
+  exp_res: 8'b01000110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 214 + 112'
+- id: TC-ADD-010
+  a: 8'b11100101
+  b: 8'b10001110
+  ctrl: 1'b0
+  exp_res: 8'b01110011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 229 + 142'
+- id: TC-ADD-011
+  a: 8'b00000011
+  b: 8'b01010001
+  ctrl: 1'b0
+  exp_res: 8'b01010100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 3 + 81'
+- id: TC-ADD-012
+  a: 8'b11011000
+  b: 8'b10101110
+  ctrl: 1'b0
+  exp_res: 8'b10000110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 216 + 174'
+- id: TC-ADD-013
+  a: 8'b10001110
+  b: 8'b01001111
+  ctrl: 1'b0
+  exp_res: 8'b11011101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 142 + 79'
+- id: TC-ADD-014
+  a: 8'b01101110
+  b: 8'b10101100
+  ctrl: 1'b0
+  exp_res: 8'b00011010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 110 + 172'
+- id: TC-ADD-015
+  a: 8'b00110100
+  b: 8'b00101111
+  ctrl: 1'b0
+  exp_res: 8'b01100011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 52 + 47'
+- id: TC-ADD-016
+  a: 8'b11000010
+  b: 8'b00110001
+  ctrl: 1'b0
+  exp_res: 8'b11110011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 194 + 49'
+- id: TC-ADD-017
+  a: 8'b10110111
+  b: 8'b10110000
+  ctrl: 1'b0
+  exp_res: 8'b01100111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 183 + 176'
+- id: TC-ADD-018
+  a: 8'b10000111
+  b: 8'b00010110
+  ctrl: 1'b0
+  exp_res: 8'b10011101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 135 + 22'
+- id: TC-ADD-019
+  a: 8'b11101011
+  b: 8'b00111111
+  ctrl: 1'b0
+  exp_res: 8'b00101010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 235 + 63'
+- id: TC-ADD-020
+  a: 8'b11000001
+  b: 8'b00101000
+  ctrl: 1'b0
+  exp_res: 8'b11101001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 193 + 40'
+- id: TC-ADD-021
+  a: 8'b10010110
+  b: 8'b10111001
+  ctrl: 1'b0
+  exp_res: 8'b01001111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 150 + 185'
+- id: TC-ADD-022
+  a: 8'b01100010
+  b: 8'b00100011
+  ctrl: 1'b0
+  exp_res: 8'b10000101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 98 + 35'
+- id: TC-ADD-023
+  a: 8'b00010111
+  b: 8'b01110100
+  ctrl: 1'b0
+  exp_res: 8'b10001011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 23 + 116'
+- id: TC-ADD-024
+  a: 8'b10010100
+  b: 8'b00101000
+  ctrl: 1'b0
+  exp_res: 8'b10111100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 148 + 40'
+- id: TC-ADD-025
+  a: 8'b01110111
+  b: 8'b00110011
+  ctrl: 1'b0
+  exp_res: 8'b10101010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 119 + 51'
+- id: TC-ADD-026
+  a: 8'b11000010
+  b: 8'b10001110
+  ctrl: 1'b0
+  exp_res: 8'b01010000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 194 + 142'
+- id: TC-ADD-027
+  a: 8'b11101000
+  b: 8'b10111010
+  ctrl: 1'b0
+  exp_res: 8'b10100010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 232 + 186'
+- id: TC-ADD-028
+  a: 8'b01010011
+  b: 8'b10111101
+  ctrl: 1'b0
+  exp_res: 8'b00010000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 83 + 189'
+- id: TC-ADD-029
+  a: 8'b10110101
+  b: 8'b01101011
+  ctrl: 1'b0
+  exp_res: 8'b00100000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 181 + 107'
+- id: TC-ADD-030
+  a: 8'b10001000
+  b: 8'b00100100
+  ctrl: 1'b0
+  exp_res: 8'b10101100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 136 + 36'
+- id: TC-ADD-031
+  a: 8'b01010111
+  b: 8'b01111101
+  ctrl: 1'b0
+  exp_res: 8'b11010100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 87 + 125'
+- id: TC-ADD-032
+  a: 8'b01010011
+  b: 8'b11101100
+  ctrl: 1'b0
+  exp_res: 8'b00111111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 83 + 236'
+- id: TC-ADD-033
+  a: 8'b11000010
+  b: 8'b10001010
+  ctrl: 1'b0
+  exp_res: 8'b01001100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 194 + 138'
+- id: TC-ADD-034
+  a: 8'b01110000
+  b: 8'b10100110
+  ctrl: 1'b0
+  exp_res: 8'b00010110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 112 + 166'
+- id: TC-ADD-035
+  a: 8'b00011100
+  b: 8'b01110101
+  ctrl: 1'b0
+  exp_res: 8'b10010001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 28 + 117'
+- id: TC-ADD-036
+  a: 8'b00010000
+  b: 8'b10100001
+  ctrl: 1'b0
+  exp_res: 8'b10110001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 16 + 161'
+- id: TC-ADD-037
+  a: 8'b11001101
+  b: 8'b10001001
+  ctrl: 1'b0
+  exp_res: 8'b01010110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 205 + 137'
+- id: TC-ADD-038
+  a: 8'b00100001
+  b: 8'b01101100
+  ctrl: 1'b0
+  exp_res: 8'b10001101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 33 + 108'
+- id: TC-ADD-039
+  a: 8'b10100001
+  b: 8'b01101100
+  ctrl: 1'b0
+  exp_res: 8'b00001101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 161 + 108'
+- id: TC-ADD-040
+  a: 8'b11111111
+  b: 8'b11001010
+  ctrl: 1'b0
+  exp_res: 8'b11001001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 255 + 202'
+- id: TC-ADD-041
+  a: 8'b11101010
+  b: 8'b01001001
+  ctrl: 1'b0
+  exp_res: 8'b00110011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 234 + 73'
+- id: TC-ADD-042
+  a: 8'b10000111
+  b: 8'b01000111
+  ctrl: 1'b0
+  exp_res: 8'b11001110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 135 + 71'
+- id: TC-ADD-043
+  a: 8'b01111110
+  b: 8'b10000110
+  ctrl: 1'b0
+  exp_res: 8'b00000100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 126 + 134'
+- id: TC-ADD-044
+  a: 8'b11011011
+  b: 8'b11001100
+  ctrl: 1'b0
+  exp_res: 8'b10100111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 219 + 204'
+- id: TC-ADD-045
+  a: 8'b10111001
+  b: 8'b01110000
+  ctrl: 1'b0
+  exp_res: 8'b00101001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 185 + 112'
+- id: TC-ADD-046
+  a: 8'b01000110
+  b: 8'b11111100
+  ctrl: 1'b0
+  exp_res: 8'b01000010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 70 + 252'
+- id: TC-ADD-047
+  a: 8'b00101110
+  b: 8'b00011000
+  ctrl: 1'b0
+  exp_res: 8'b01000110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 46 + 24'
+- id: TC-ADD-048
+  a: 8'b00111000
+  b: 8'b01001110
+  ctrl: 1'b0
+  exp_res: 8'b10000110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 56 + 78'
+- id: TC-ADD-049
+  a: 8'b01010001
+  b: 8'b11011000
+  ctrl: 1'b0
+  exp_res: 8'b00101001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 81 + 216'
+- id: TC-ADD-050
+  a: 8'b00100000
+  b: 8'b11000101
+  ctrl: 1'b0
+  exp_res: 8'b11100101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 32 + 197'
+- id: TC-ADD-051
+  a: 8'b11000011
+  b: 8'b11101111
+  ctrl: 1'b0
+  exp_res: 8'b10110010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 195 + 239'
+- id: TC-ADD-052
+  a: 8'b10000000
+  b: 8'b00000101
+  ctrl: 1'b0
+  exp_res: 8'b10000101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 128 + 5'
+- id: TC-ADD-053
+  a: 8'b00111010
+  b: 8'b10001000
+  ctrl: 1'b0
+  exp_res: 8'b11000010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 58 + 136'
+- id: TC-ADD-054
+  a: 8'b10101110
+  b: 8'b00111001
+  ctrl: 1'b0
+  exp_res: 8'b11100111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 174 + 57'
+- id: TC-ADD-055
+  a: 8'b10010110
+  b: 8'b11011110
+  ctrl: 1'b0
+  exp_res: 8'b01110100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 150 + 222'
+- id: TC-ADD-056
+  a: 8'b01010000
+  b: 8'b11101000
+  ctrl: 1'b0
+  exp_res: 8'b00111000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 80 + 232'
+- id: TC-ADD-057
+  a: 8'b00000001
+  b: 8'b10000110
+  ctrl: 1'b0
+  exp_res: 8'b10000111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 1 + 134'
+- id: TC-ADD-058
+  a: 8'b01011011
+  b: 8'b00110110
+  ctrl: 1'b0
+  exp_res: 8'b10010001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 91 + 54'
+- id: TC-ADD-059
+  a: 8'b10011000
+  b: 8'b01100101
+  ctrl: 1'b0
+  exp_res: 8'b11111101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 152 + 101'
+- id: TC-ADD-060
+  a: 8'b01001110
+  b: 8'b10111111
+  ctrl: 1'b0
+  exp_res: 8'b00001101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 78 + 191'
+- id: TC-ADD-061
+  a: 8'b01010010
+  b: 8'b00000000
+  ctrl: 1'b0
+  exp_res: 8'b01010010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 82 + 0'
+- id: TC-ADD-062
+  a: 8'b10100101
+  b: 8'b11111010
+  ctrl: 1'b0
+  exp_res: 8'b10011111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 165 + 250'
+- id: TC-ADD-063
+  a: 8'b00001001
+  b: 8'b00111001
+  ctrl: 1'b0
+  exp_res: 8'b01000010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 9 + 57'
+- id: TC-ADD-064
+  a: 8'b10111001
+  b: 8'b10011101
+  ctrl: 1'b0
+  exp_res: 8'b01010110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 185 + 157'
+- id: TC-ADD-065
+  a: 8'b01111010
+  b: 8'b00011101
+  ctrl: 1'b0
+  exp_res: 8'b10010111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 122 + 29'
+- id: TC-ADD-066
+  a: 8'b01111011
+  b: 8'b00101000
+  ctrl: 1'b0
+  exp_res: 8'b10100011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 123 + 40'
+- id: TC-ADD-067
+  a: 8'b00101011
+  b: 8'b11111000
+  ctrl: 1'b0
+  exp_res: 8'b00100011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 43 + 248'
+- id: TC-ADD-068
+  a: 8'b00100011
+  b: 8'b01000000
+  ctrl: 1'b0
+  exp_res: 8'b01100011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 35 + 64'
+- id: TC-ADD-069
+  a: 8'b01000001
+  b: 8'b11110011
+  ctrl: 1'b0
+  exp_res: 8'b00110100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 65 + 243'
+- id: TC-ADD-070
+  a: 8'b01010100
+  b: 8'b10000111
+  ctrl: 1'b0
+  exp_res: 8'b11011011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 84 + 135'
+- id: TC-ADD-071
+  a: 8'b11011000
+  b: 8'b01101100
+  ctrl: 1'b0
+  exp_res: 8'b01000100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 216 + 108'
+- id: TC-ADD-072
+  a: 8'b01100110
+  b: 8'b10011111
+  ctrl: 1'b0
+  exp_res: 8'b00000101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 102 + 159'
+- id: TC-ADD-073
+  a: 8'b11001100
+  b: 8'b10111111
+  ctrl: 1'b0
+  exp_res: 8'b10001011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 204 + 191'
+- id: TC-ADD-074
+  a: 8'b11100000
+  b: 8'b11100111
+  ctrl: 1'b0
+  exp_res: 8'b11000111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 224 + 231'
+- id: TC-ADD-075
+  a: 8'b00111101
+  b: 8'b01111110
+  ctrl: 1'b0
+  exp_res: 8'b10111011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 61 + 126'
+- id: TC-ADD-076
+  a: 8'b01110011
+  b: 8'b00100000
+  ctrl: 1'b0
+  exp_res: 8'b10010011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 115 + 32'
+- id: TC-ADD-077
+  a: 8'b10101101
+  b: 8'b00001010
+  ctrl: 1'b0
+  exp_res: 8'b10110111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 173 + 10'
+- id: TC-ADD-078
+  a: 8'b01110101
+  b: 8'b01110000
+  ctrl: 1'b0
+  exp_res: 8'b11100101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 117 + 112'
+- id: TC-ADD-079
+  a: 8'b00000011
+  b: 8'b00100100
+  ctrl: 1'b0
+  exp_res: 8'b00100111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 3 + 36'
+- id: TC-ADD-080
+  a: 8'b00011110
+  b: 8'b01110101
+  ctrl: 1'b0
+  exp_res: 8'b10010011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 30 + 117'
+- id: TC-ADD-081
+  a: 8'b00100010
+  b: 8'b00010000
+  ctrl: 1'b0
+  exp_res: 8'b00110010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 34 + 16'
+- id: TC-ADD-082
+  a: 8'b10101001
+  b: 8'b00100100
+  ctrl: 1'b0
+  exp_res: 8'b11001101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 169 + 36'
+- id: TC-ADD-083
+  a: 8'b01111001
+  b: 8'b10001110
+  ctrl: 1'b0
+  exp_res: 8'b00000111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 121 + 142'
+- id: TC-ADD-084
+  a: 8'b11111000
+  b: 8'b01101101
+  ctrl: 1'b0
+  exp_res: 8'b01100101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 248 + 109'
+- id: TC-ADD-085
+  a: 8'b01000011
+  b: 8'b11110010
+  ctrl: 1'b0
+  exp_res: 8'b00110101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 67 + 242'
+- id: TC-ADD-086
+  a: 8'b01111100
+  b: 8'b11110010
+  ctrl: 1'b0
+  exp_res: 8'b01101110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 124 + 242'
+- id: TC-ADD-087
+  a: 8'b11010000
+  b: 8'b01100001
+  ctrl: 1'b0
+  exp_res: 8'b00110001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 208 + 97'
+- id: TC-ADD-088
+  a: 8'b00110000
+  b: 8'b00110001
+  ctrl: 1'b0
+  exp_res: 8'b01100001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 48 + 49'
+- id: TC-ADD-089
+  a: 8'b11011100
+  b: 8'b10110101
+  ctrl: 1'b0
+  exp_res: 8'b10010001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 220 + 181'
+- id: TC-ADD-090
+  a: 8'b11011000
+  b: 8'b11010010
+  ctrl: 1'b0
+  exp_res: 8'b10101010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 216 + 210'
+- id: TC-ADD-091
+  a: 8'b11101111
+  b: 8'b00011011
+  ctrl: 1'b0
+  exp_res: 8'b00001010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 239 + 27'
+- id: TC-ADD-092
+  a: 8'b00110010
+  b: 8'b00011111
+  ctrl: 1'b0
+  exp_res: 8'b01010001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 50 + 31'
+- id: TC-ADD-093
+  a: 8'b11001110
+  b: 8'b10101101
+  ctrl: 1'b0
+  exp_res: 8'b01111011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 206 + 173'
+- id: TC-ADD-094
+  a: 8'b00110111
+  b: 8'b01111111
+  ctrl: 1'b0
+  exp_res: 8'b10110110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 55 + 127'
+- id: TC-ADD-095
+  a: 8'b01100010
+  b: 8'b01100001
+  ctrl: 1'b0
+  exp_res: 8'b11000011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 98 + 97'
+- id: TC-ADD-096
+  a: 8'b11100101
+  b: 8'b01000111
+  ctrl: 1'b0
+  exp_res: 8'b00101100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 229 + 71'
+- id: TC-ADD-097
+  a: 8'b11011000
+  b: 8'b01011101
+  ctrl: 1'b0
+  exp_res: 8'b00110101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 216 + 93'
+- id: TC-ADD-098
+  a: 8'b10001110
+  b: 8'b11101100
+  ctrl: 1'b0
+  exp_res: 8'b01111010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 142 + 236'
+- id: TC-ADD-099
+  a: 8'b01111111
+  b: 8'b00100110
+  ctrl: 1'b0
+  exp_res: 8'b10100101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 127 + 38'
+- id: TC-ADD-100
+  a: 8'b11100010
+  b: 8'b00110010
+  ctrl: 1'b0
+  exp_res: 8'b00010100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 226 + 50'
+- id: TC-ADD-101
+  a: 8'b00011001
+  b: 8'b00000111
+  ctrl: 1'b0
+  exp_res: 8'b00100000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 25 + 7'
+- id: TC-ADD-102
+  a: 8'b00101111
+  b: 8'b01111001
+  ctrl: 1'b0
+  exp_res: 8'b10101000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 47 + 121'
+- id: TC-ADD-103
+  a: 8'b01010101
+  b: 8'b11010000
+  ctrl: 1'b0
+  exp_res: 8'b00100101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 85 + 208'
+- id: TC-ADD-104
+  a: 8'b11111000
+  b: 8'b11110110
+  ctrl: 1'b0
+  exp_res: 8'b11101110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 248 + 246'
+- id: TC-ADD-105
+  a: 8'b01101101
+  b: 8'b11001101
+  ctrl: 1'b0
+  exp_res: 8'b00111010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 109 + 205'
+- id: TC-ADD-106
+  a: 8'b00011110
+  b: 8'b01010100
+  ctrl: 1'b0
+  exp_res: 8'b01110010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 30 + 84'
+- id: TC-ADD-107
+  a: 8'b11000010
+  b: 8'b00000001
+  ctrl: 1'b0
+  exp_res: 8'b11000011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 194 + 1'
+- id: TC-ADD-108
+  a: 8'b11000111
+  b: 8'b10000111
+  ctrl: 1'b0
+  exp_res: 8'b01001110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 199 + 135'
+- id: TC-ADD-109
+  a: 8'b11101000
+  b: 8'b10010010
+  ctrl: 1'b0
+  exp_res: 8'b01111010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 232 + 146'
+- id: TC-ADD-110
+  a: 8'b11011000
+  b: 8'b11111001
+  ctrl: 1'b0
+  exp_res: 8'b11010001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 216 + 249'
+- id: TC-ADD-111
+  a: 8'b01001111
+  b: 8'b01100001
+  ctrl: 1'b0
+  exp_res: 8'b10110000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 79 + 97'
+- id: TC-ADD-112
+  a: 8'b10010111
+  b: 8'b01101111
+  ctrl: 1'b0
+  exp_res: 8'b00000110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 151 + 111'
+- id: TC-ADD-113
+  a: 8'b00011101
+  b: 8'b00011111
+  ctrl: 1'b0
+  exp_res: 8'b00111100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 29 + 31'
+- id: TC-ADD-114
+  a: 8'b10100000
+  b: 8'b00011101
+  ctrl: 1'b0
+  exp_res: 8'b10111101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 160 + 29'
+- id: TC-ADD-115
+  a: 8'b00011001
+  b: 8'b11110100
+  ctrl: 1'b0
+  exp_res: 8'b00001101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 25 + 244'
+- id: TC-ADD-116
+  a: 8'b01010000
+  b: 8'b00011101
+  ctrl: 1'b0
+  exp_res: 8'b01101101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 80 + 29'
+- id: TC-ADD-117
+  a: 8'b00101001
+  b: 8'b01011111
+  ctrl: 1'b0
+  exp_res: 8'b10001000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 41 + 95'
+- id: TC-ADD-118
+  a: 8'b00100011
+  b: 8'b00100010
+  ctrl: 1'b0
+  exp_res: 8'b01000101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 35 + 34'
+- id: TC-ADD-119
+  a: 8'b01111000
+  b: 8'b11001110
+  ctrl: 1'b0
+  exp_res: 8'b01000110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 120 + 206'
+- id: TC-ADD-120
+  a: 8'b00111101
+  b: 8'b01111110
+  ctrl: 1'b0
+  exp_res: 8'b10111011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 61 + 126'
+- id: TC-ADD-121
+  a: 8'b00010100
+  b: 8'b00101001
+  ctrl: 1'b0
+  exp_res: 8'b00111101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 20 + 41'
+- id: TC-ADD-122
+  a: 8'b11010110
+  b: 8'b10100001
+  ctrl: 1'b0
+  exp_res: 8'b01110111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 214 + 161'
+- id: TC-ADD-123
+  a: 8'b10000101
+  b: 8'b01101000
+  ctrl: 1'b0
+  exp_res: 8'b11101101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 133 + 104'
+- id: TC-ADD-124
+  a: 8'b10100000
+  b: 8'b01111010
+  ctrl: 1'b0
+  exp_res: 8'b00011010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 160 + 122'
+- id: TC-ADD-125
+  a: 8'b10000111
+  b: 8'b11001010
+  ctrl: 1'b0
+  exp_res: 8'b01010001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 135 + 202'
+- id: TC-ADD-126
+  a: 8'b01000011
+  b: 8'b10011001
+  ctrl: 1'b0
+  exp_res: 8'b11011100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 67 + 153'
+- id: TC-ADD-127
+  a: 8'b11101010
+  b: 8'b10100001
+  ctrl: 1'b0
+  exp_res: 8'b10001011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 234 + 161'
+- id: TC-ADD-128
+  a: 8'b00100101
+  b: 8'b00000100
+  ctrl: 1'b0
+  exp_res: 8'b00101001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 37 + 4'
+- id: TC-ADD-129
+  a: 8'b11101010
+  b: 8'b00110011
+  ctrl: 1'b0
+  exp_res: 8'b00011101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 234 + 51'
+- id: TC-ADD-130
+  a: 8'b00100101
+  b: 8'b01101101
+  ctrl: 1'b0
+  exp_res: 8'b10010010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 37 + 109'
+- id: TC-ADD-131
+  a: 8'b10000111
+  b: 8'b01000011
+  ctrl: 1'b0
+  exp_res: 8'b11001010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 135 + 67'
+- id: TC-ADD-132
+  a: 8'b10110010
+  b: 8'b00100011
+  ctrl: 1'b0
+  exp_res: 8'b11010101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 178 + 35'
+- id: TC-ADD-133
+  a: 8'b01111101
+  b: 8'b10111101
+  ctrl: 1'b0
+  exp_res: 8'b00111010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 125 + 189'
+- id: TC-ADD-134
+  a: 8'b10010001
+  b: 8'b01010000
+  ctrl: 1'b0
+  exp_res: 8'b11100001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 145 + 80'
+- id: TC-ADD-135
+  a: 8'b11100000
+  b: 8'b10011010
+  ctrl: 1'b0
+  exp_res: 8'b01111010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 224 + 154'
+- id: TC-ADD-136
+  a: 8'b00000100
+  b: 8'b10011001
+  ctrl: 1'b0
+  exp_res: 8'b10011101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 4 + 153'
+- id: TC-ADD-137
+  a: 8'b00110101
+  b: 8'b01000100
+  ctrl: 1'b0
+  exp_res: 8'b01111001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 53 + 68'
+- id: TC-ADD-138
+  a: 8'b10000111
+  b: 8'b00111011
+  ctrl: 1'b0
+  exp_res: 8'b11000010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 135 + 59'
+- id: TC-ADD-139
+  a: 8'b00110110
+  b: 8'b01001111
+  ctrl: 1'b0
+  exp_res: 8'b10000101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 54 + 79'
+- id: TC-ADD-140
+  a: 8'b10001011
+  b: 8'b10010000
+  ctrl: 1'b0
+  exp_res: 8'b00011011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 139 + 144'
+- id: TC-ADD-141
+  a: 8'b01101011
+  b: 8'b10101111
+  ctrl: 1'b0
+  exp_res: 8'b00011010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 107 + 175'
+- id: TC-ADD-142
+  a: 8'b01101000
+  b: 8'b10000111
+  ctrl: 1'b0
+  exp_res: 8'b11101111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 104 + 135'
+- id: TC-ADD-143
+  a: 8'b11111010
+  b: 8'b10000000
+  ctrl: 1'b0
+  exp_res: 8'b01111010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 250 + 128'
+- id: TC-ADD-144
+  a: 8'b00011010
+  b: 8'b00101111
+  ctrl: 1'b0
+  exp_res: 8'b01001001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 26 + 47'
+- id: TC-ADD-145
+  a: 8'b11011000
+  b: 8'b10001101
+  ctrl: 1'b0
+  exp_res: 8'b01100101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 216 + 141'
+- id: TC-ADD-146
+  a: 8'b00010110
+  b: 8'b00000001
+  ctrl: 1'b0
+  exp_res: 8'b00010111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 22 + 1'
+- id: TC-ADD-147
+  a: 8'b10101010
+  b: 8'b01000010
+  ctrl: 1'b0
+  exp_res: 8'b11101100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 170 + 66'
+- id: TC-ADD-148
+  a: 8'b10000110
+  b: 8'b01010010
+  ctrl: 1'b0
+  exp_res: 8'b11011000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 134 + 82'
+- id: TC-ADD-149
+  a: 8'b11100010
+  b: 8'b11011010
+  ctrl: 1'b0
+  exp_res: 8'b10111100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 226 + 218'
+- id: TC-ADD-150
+  a: 8'b00000100
+  b: 8'b00111001
+  ctrl: 1'b0
+  exp_res: 8'b00111101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 4 + 57'
+- id: TC-ADD-151
+  a: 8'b00100110
+  b: 8'b01001100
+  ctrl: 1'b0
+  exp_res: 8'b01110010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 38 + 76'
+- id: TC-ADD-152
+  a: 8'b00010010
+  b: 8'b10111101
+  ctrl: 1'b0
+  exp_res: 8'b11001111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 18 + 189'
+- id: TC-ADD-153
+  a: 8'b01001011
+  b: 8'b11011100
+  ctrl: 1'b0
+  exp_res: 8'b00100111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 75 + 220'
+- id: TC-ADD-154
+  a: 8'b01000001
+  b: 8'b00010101
+  ctrl: 1'b0
+  exp_res: 8'b01010110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 65 + 21'
+- id: TC-ADD-155
+  a: 8'b10011101
+  b: 8'b10111010
+  ctrl: 1'b0
+  exp_res: 8'b01010111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 157 + 186'
+- id: TC-ADD-156
+  a: 8'b00010100
+  b: 8'b10110111
+  ctrl: 1'b0
+  exp_res: 8'b11001011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 20 + 183'
+- id: TC-ADD-157
+  a: 8'b01101011
+  b: 8'b01111111
+  ctrl: 1'b0
+  exp_res: 8'b11101010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 107 + 127'
+- id: TC-ADD-158
+  a: 8'b00110100
+  b: 8'b10110101
+  ctrl: 1'b0
+  exp_res: 8'b11101001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 52 + 181'
+- id: TC-ADD-159
+  a: 8'b11010000
+  b: 8'b01001111
+  ctrl: 1'b0
+  exp_res: 8'b00011111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 208 + 79'
+- id: TC-ADD-160
+  a: 8'b01111001
+  b: 8'b01010011
+  ctrl: 1'b0
+  exp_res: 8'b11001100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 121 + 83'
+- id: TC-ADD-161
+  a: 8'b01011010
+  b: 8'b11010011
+  ctrl: 1'b0
+  exp_res: 8'b00101101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 90 + 211'
+- id: TC-ADD-162
+  a: 8'b00001100
+  b: 8'b01011011
+  ctrl: 1'b0
+  exp_res: 8'b01100111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 12 + 91'
+- id: TC-ADD-163
+  a: 8'b10101010
+  b: 8'b11010010
+  ctrl: 1'b0
+  exp_res: 8'b01111100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 170 + 210'
+- id: TC-ADD-164
+  a: 8'b01111111
+  b: 8'b10001000
+  ctrl: 1'b0
+  exp_res: 8'b00000111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 127 + 136'
+- id: TC-ADD-165
+  a: 8'b01010001
+  b: 8'b00110111
+  ctrl: 1'b0
+  exp_res: 8'b10001000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 81 + 55'
+- id: TC-ADD-166
+  a: 8'b11000011
+  b: 8'b00010011
+  ctrl: 1'b0
+  exp_res: 8'b11010110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 195 + 19'
+- id: TC-ADD-167
+  a: 8'b11110000
+  b: 8'b01110001
+  ctrl: 1'b0
+  exp_res: 8'b01100001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 240 + 113'
+- id: TC-ADD-168
+  a: 8'b01100110
+  b: 8'b11101011
+  ctrl: 1'b0
+  exp_res: 8'b01010001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 102 + 235'
+- id: TC-ADD-169
+  a: 8'b10110011
+  b: 8'b10011100
+  ctrl: 1'b0
+  exp_res: 8'b01001111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 179 + 156'
+- id: TC-ADD-170
+  a: 8'b01110100
+  b: 8'b01110010
+  ctrl: 1'b0
+  exp_res: 8'b11100110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 116 + 114'
+- id: TC-ADD-171
+  a: 8'b00001100
+  b: 8'b01100010
+  ctrl: 1'b0
+  exp_res: 8'b01101110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 12 + 98'
+- id: TC-ADD-172
+  a: 8'b11001100
+  b: 8'b10101000
+  ctrl: 1'b0
+  exp_res: 8'b01110100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 204 + 168'
+- id: TC-ADD-173
+  a: 8'b10001110
+  b: 8'b00100011
+  ctrl: 1'b0
+  exp_res: 8'b10110001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 142 + 35'
+- id: TC-ADD-174
+  a: 8'b10001110
+  b: 8'b10110011
+  ctrl: 1'b0
+  exp_res: 8'b01000001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 142 + 179'
+- id: TC-ADD-175
+  a: 8'b11001100
+  b: 8'b10101001
+  ctrl: 1'b0
+  exp_res: 8'b01110101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 204 + 169'
+- id: TC-ADD-176
+  a: 8'b00001110
+  b: 8'b00111011
+  ctrl: 1'b0
+  exp_res: 8'b01001001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 14 + 59'
+- id: TC-ADD-177
+  a: 8'b10000101
+  b: 8'b01011011
+  ctrl: 1'b0
+  exp_res: 8'b11100000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 133 + 91'
+- id: TC-ADD-178
+  a: 8'b10000111
+  b: 8'b00010011
+  ctrl: 1'b0
+  exp_res: 8'b10011010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 135 + 19'
+- id: TC-ADD-179
+  a: 8'b00110111
+  b: 8'b11011110
+  ctrl: 1'b0
+  exp_res: 8'b00010101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 55 + 222'
+- id: TC-ADD-180
+  a: 8'b10110000
+  b: 8'b10100000
+  ctrl: 1'b0
+  exp_res: 8'b01010000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 176 + 160'
+- id: TC-ADD-181
+  a: 8'b11011111
+  b: 8'b00111011
+  ctrl: 1'b0
+  exp_res: 8'b00011010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 223 + 59'
+- id: TC-ADD-182
+  a: 8'b11000101
+  b: 8'b01100001
+  ctrl: 1'b0
+  exp_res: 8'b00100110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 197 + 97'
+- id: TC-ADD-183
+  a: 8'b10000010
+  b: 8'b00010110
+  ctrl: 1'b0
+  exp_res: 8'b10011000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 130 + 22'
+- id: TC-ADD-184
+  a: 8'b11011111
+  b: 8'b00000000
+  ctrl: 1'b0
+  exp_res: 8'b11011111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 223 + 0'
+- id: TC-ADD-185
+  a: 8'b01100100
+  b: 8'b10111010
+  ctrl: 1'b0
+  exp_res: 8'b00011110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 100 + 186'
+- id: TC-ADD-186
+  a: 8'b11011100
+  b: 8'b00100011
+  ctrl: 1'b0
+  exp_res: 8'b11111111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 220 + 35'
+- id: TC-ADD-187
+  a: 8'b10101001
+  b: 8'b10100000
+  ctrl: 1'b0
+  exp_res: 8'b01001001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 169 + 160'
+- id: TC-ADD-188
+  a: 8'b00111111
+  b: 8'b10011001
+  ctrl: 1'b0
+  exp_res: 8'b11011000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 63 + 153'
+- id: TC-ADD-189
+  a: 8'b10011110
+  b: 8'b11010001
+  ctrl: 1'b0
+  exp_res: 8'b01101111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 158 + 209'
+- id: TC-ADD-190
+  a: 8'b10100111
+  b: 8'b11001110
+  ctrl: 1'b0
+  exp_res: 8'b01110101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 167 + 206'
+- id: TC-ADD-191
+  a: 8'b10010111
+  b: 8'b01000001
+  ctrl: 1'b0
+  exp_res: 8'b11011000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 151 + 65'
+- id: TC-ADD-192
+  a: 8'b01100010
+  b: 8'b11010111
+  ctrl: 1'b0
+  exp_res: 8'b00111001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 98 + 215'
+- id: TC-ADD-193
+  a: 8'b11000010
+  b: 8'b01011001
+  ctrl: 1'b0
+  exp_res: 8'b00011011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 194 + 89'
+- id: TC-ADD-194
+  a: 8'b10011010
+  b: 8'b11001111
+  ctrl: 1'b0
+  exp_res: 8'b01101001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 154 + 207'
+- id: TC-ADD-195
+  a: 8'b00000000
+  b: 8'b10011011
+  ctrl: 1'b0
+  exp_res: 8'b10011011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 0 + 155'
+- id: TC-ADD-196
+  a: 8'b10010010
+  b: 8'b01101011
+  ctrl: 1'b0
+  exp_res: 8'b11111101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 146 + 107'
+- id: TC-ADD-197
+  a: 8'b11011100
+  b: 8'b10100100
+  ctrl: 1'b0
+  exp_res: 8'b10000000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 220 + 164'
+- id: TC-ADD-198
+  a: 8'b11101110
+  b: 8'b11100010
+  ctrl: 1'b0
+  exp_res: 8'b11010000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 238 + 226'
+- id: TC-ADD-199
+  a: 8'b11100010
+  b: 8'b01101101
+  ctrl: 1'b0
+  exp_res: 8'b01001111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 226 + 109'
+- id: TC-ADD-200
+  a: 8'b11110010
+  b: 8'b01010110
+  ctrl: 1'b0
+  exp_res: 8'b01001000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 242 + 86'
+- id: TC-ADD-201
+  a: 8'b00101011
+  b: 8'b10010001
+  ctrl: 1'b0
+  exp_res: 8'b10111100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 43 + 145'
+- id: TC-ADD-202
+  a: 8'b10101011
+  b: 8'b00101111
+  ctrl: 1'b0
+  exp_res: 8'b11011010
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 171 + 47'
+- id: TC-ADD-203
+  a: 8'b01111000
+  b: 8'b10011110
+  ctrl: 1'b0
+  exp_res: 8'b00010110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 120 + 158'
+- id: TC-ADD-204
+  a: 8'b01110011
+  b: 8'b01100101
+  ctrl: 1'b0
+  exp_res: 8'b11011000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 115 + 101'
+- id: TC-ADD-205
+  a: 8'b01001011
+  b: 8'b00001100
+  ctrl: 1'b0
+  exp_res: 8'b01010111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 75 + 12'
+- id: TC-ADD-206
+  a: 8'b00010111
+  b: 8'b01111101
+  ctrl: 1'b0
+  exp_res: 8'b10010100
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 23 + 125'
+- id: TC-ADD-207
+  a: 8'b11110011
+  b: 8'b00100101
+  ctrl: 1'b0
+  exp_res: 8'b00011000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 243 + 37'
+- id: TC-ADD-208
+  a: 8'b11101001
+  b: 8'b11010100
+  ctrl: 1'b0
+  exp_res: 8'b10111101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 233 + 212'
+- id: TC-ADD-209
+  a: 8'b01100011
+  b: 8'b11000100
+  ctrl: 1'b0
+  exp_res: 8'b00100111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 99 + 196'
+- id: TC-ADD-210
+  a: 8'b11111101
+  b: 8'b11001100
+  ctrl: 1'b0
+  exp_res: 8'b11001001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 253 + 204'
+- id: TC-ADD-211
+  a: 8'b01111100
+  b: 8'b01001011
+  ctrl: 1'b0
+  exp_res: 8'b11000111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 124 + 75'
+- id: TC-ADD-212
+  a: 8'b00000010
+  b: 8'b00110110
+  ctrl: 1'b0
+  exp_res: 8'b00111000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 2 + 54'
+- id: TC-ADD-213
+  a: 8'b11011001
+  b: 8'b01110000
+  ctrl: 1'b0
+  exp_res: 8'b01001001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 217 + 112'
+- id: TC-ADD-214
+  a: 8'b01011010
+  b: 8'b11101101
+  ctrl: 1'b0
+  exp_res: 8'b01000111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 90 + 237'
+- id: TC-ADD-215
+  a: 8'b00011001
+  b: 8'b01111111
+  ctrl: 1'b0
+  exp_res: 8'b10011000
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 25 + 127'
+- id: TC-ADD-216
+  a: 8'b00111110
+  b: 8'b11101001
+  ctrl: 1'b0
+  exp_res: 8'b00100111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 62 + 233'
+- id: TC-ADD-217
+  a: 8'b01000100
+  b: 8'b11101101
+  ctrl: 1'b0
+  exp_res: 8'b00110001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 68 + 237'
+- id: TC-ADD-218
+  a: 8'b10100010
+  b: 8'b11100010
+  ctrl: 1'b0
+  exp_res: 8'b10000100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 162 + 226'
+- id: TC-ADD-219
+  a: 8'b11011010
+  b: 8'b11100100
+  ctrl: 1'b0
+  exp_res: 8'b10111110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 218 + 228'
+- id: TC-ADD-220
+  a: 8'b01010001
+  b: 8'b11110011
+  ctrl: 1'b0
+  exp_res: 8'b01000100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 81 + 243'
+- id: TC-ADD-221
+  a: 8'b11100110
+  b: 8'b10000100
+  ctrl: 1'b0
+  exp_res: 8'b01101010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 230 + 132'
+- id: TC-ADD-222
+  a: 8'b01111110
+  b: 8'b10001101
+  ctrl: 1'b0
+  exp_res: 8'b00001011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 126 + 141'
+- id: TC-ADD-223
+  a: 8'b11111000
+  b: 8'b01111010
+  ctrl: 1'b0
+  exp_res: 8'b01110010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 248 + 122'
+- id: TC-ADD-224
+  a: 8'b10001100
+  b: 8'b11100001
+  ctrl: 1'b0
+  exp_res: 8'b01101101
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 140 + 225'
+- id: TC-ADD-225
+  a: 8'b00100111
+  b: 8'b10010010
+  ctrl: 1'b0
+  exp_res: 8'b10111001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 39 + 146'
+- id: TC-ADD-226
+  a: 8'b01111000
+  b: 8'b10001011
+  ctrl: 1'b0
+  exp_res: 8'b00000011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 120 + 139'
+- id: TC-ADD-227
+  a: 8'b10101011
+  b: 8'b10100011
+  ctrl: 1'b0
+  exp_res: 8'b01001110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 171 + 163'
+- id: TC-ADD-228
+  a: 8'b00101001
+  b: 8'b01000110
+  ctrl: 1'b0
+  exp_res: 8'b01101111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 41 + 70'
+- id: TC-ADD-229
+  a: 8'b01001101
+  b: 8'b01110110
+  ctrl: 1'b0
+  exp_res: 8'b11000011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 77 + 118'
+- id: TC-ADD-230
+  a: 8'b11000100
+  b: 8'b01001110
+  ctrl: 1'b0
+  exp_res: 8'b00010010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 196 + 78'
+- id: TC-ADD-231
+  a: 8'b01101101
+  b: 8'b00100000
+  ctrl: 1'b0
+  exp_res: 8'b10001101
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 109 + 32'
+- id: TC-ADD-232
+  a: 8'b11010100
+  b: 8'b11010000
+  ctrl: 1'b0
+  exp_res: 8'b10100100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 212 + 208'
+- id: TC-ADD-233
+  a: 8'b10101001
+  b: 8'b11101110
+  ctrl: 1'b0
+  exp_res: 8'b10010111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 169 + 238'
+- id: TC-ADD-234
+  a: 8'b11010100
+  b: 8'b00011111
+  ctrl: 1'b0
+  exp_res: 8'b11110011
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 212 + 31'
+- id: TC-ADD-235
+  a: 8'b01101001
+  b: 8'b11010111
+  ctrl: 1'b0
+  exp_res: 8'b01000000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 105 + 215'
+- id: TC-ADD-236
+  a: 8'b11000111
+  b: 8'b00001010
+  ctrl: 1'b0
+  exp_res: 8'b11010001
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 199 + 10'
+- id: TC-ADD-237
+  a: 8'b11000010
+  b: 8'b11110100
+  ctrl: 1'b0
+  exp_res: 8'b10110110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 194 + 244'
+- id: TC-ADD-238
+  a: 8'b00000011
+  b: 8'b10110100
+  ctrl: 1'b0
+  exp_res: 8'b10110111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 3 + 180'
+- id: TC-ADD-239
+  a: 8'b10011000
+  b: 8'b11000111
+  ctrl: 1'b0
+  exp_res: 8'b01011111
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 152 + 199'
+- id: TC-ADD-240
+  a: 8'b11010110
+  b: 8'b01110000
+  ctrl: 1'b0
+  exp_res: 8'b01000110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 214 + 112'
+- id: TC-ADD-241
+  a: 8'b11111001
+  b: 8'b01110000
+  ctrl: 1'b0
+  exp_res: 8'b01101001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 249 + 112'
+- id: TC-ADD-242
+  a: 8'b10001011
+  b: 8'b11011111
+  ctrl: 1'b0
+  exp_res: 8'b01101010
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 139 + 223'
+- id: TC-ADD-243
+  a: 8'b11111000
+  b: 8'b00001110
+  ctrl: 1'b0
+  exp_res: 8'b00000110
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 248 + 14'
+- id: TC-ADD-244
+  a: 8'b11000111
+  b: 8'b10101100
+  ctrl: 1'b0
+  exp_res: 8'b01110011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 199 + 172'
+- id: TC-ADD-245
+  a: 8'b11001111
+  b: 8'b01010100
+  ctrl: 1'b0
+  exp_res: 8'b00100011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 207 + 84'
+- id: TC-ADD-246
+  a: 8'b11101111
+  b: 8'b01000001
+  ctrl: 1'b0
+  exp_res: 8'b00110000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 239 + 65'
+- id: TC-ADD-247
+  a: 8'b00001101
+  b: 8'b11001001
+  ctrl: 1'b0
+  exp_res: 8'b11010110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 13 + 201'
+- id: TC-ADD-248
+  a: 8'b00001101
+  b: 8'b00101010
+  ctrl: 1'b0
+  exp_res: 8'b00110111
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 13 + 42'
+- id: TC-ADD-249
+  a: 8'b11011011
+  b: 8'b01000101
+  ctrl: 1'b0
+  exp_res: 8'b00100000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 219 + 69'
+- id: TC-ADD-250
+  a: 8'b11101100
+  b: 8'b01011101
+  ctrl: 1'b0
+  exp_res: 8'b01001001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 236 + 93'
+- id: TC-ADD-251
+  a: 8'b00011001
+  b: 8'b10000101
+  ctrl: 1'b0
+  exp_res: 8'b10011110
+  exp_cb: 1'b0
+  type: ADD
+  desc: 'Addition: 25 + 133'
+- id: TC-ADD-252
+  a: 8'b11000010
+  b: 8'b10100111
+  ctrl: 1'b0
+  exp_res: 8'b01101001
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 194 + 167'
+- id: TC-ADD-253
+  a: 8'b01101100
+  b: 8'b11101000
+  ctrl: 1'b0
+  exp_res: 8'b01010100
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 108 + 232'
+- id: TC-ADD-254
+  a: 8'b10100111
+  b: 8'b10101100
+  ctrl: 1'b0
+  exp_res: 8'b01010011
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 167 + 172'
+- id: TC-ADD-255
+  a: 8'b11000010
+  b: 8'b10001110
+  ctrl: 1'b0
+  exp_res: 8'b01010000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 194 + 142'
+- id: TC-ADD-256
+  a: 8'b11010111
+  b: 8'b10000001
+  ctrl: 1'b0
+  exp_res: 8'b01011000
+  exp_cb: 1'b1
+  type: ADD
+  desc: 'Addition: 215 + 129'
+- id: TC-SUB-001
+  a: 8'b00101001
+  b: 8'b11110000
+  ctrl: 1'b1
+  exp_res: 8'b00111001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 41 - 240'
+- id: TC-SUB-002
+  a: 8'b00001001
+  b: 8'b00011010
+  ctrl: 1'b1
+  exp_res: 8'b11101111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 9 - 26'
+- id: TC-SUB-003
+  a: 8'b10110011
+  b: 8'b01110010
+  ctrl: 1'b1
+  exp_res: 8'b01000001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 179 - 114'
+- id: TC-SUB-004
+  a: 8'b00100011
+  b: 8'b00010100
+  ctrl: 1'b1
+  exp_res: 8'b00001111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 35 - 20'
+- id: TC-SUB-005
+  a: 8'b00001111
+  b: 8'b01111110
+  ctrl: 1'b1
+  exp_res: 8'b10010001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 15 - 126'
+- id: TC-SUB-006
+  a: 8'b01100110
+  b: 8'b00001010
+  ctrl: 1'b1
+  exp_res: 8'b01011100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 102 - 10'
+- id: TC-SUB-007
+  a: 8'b01001110
+  b: 8'b01111010
+  ctrl: 1'b1
+  exp_res: 8'b11010100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 78 - 122'
+- id: TC-SUB-008
+  a: 8'b01000000
+  b: 8'b11110010
+  ctrl: 1'b1
+  exp_res: 8'b01001110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 64 - 242'
+- id: TC-SUB-009
+  a: 8'b00111010
+  b: 8'b01101111
+  ctrl: 1'b1
+  exp_res: 8'b11001011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 58 - 111'
+- id: TC-SUB-010
+  a: 8'b11101110
+  b: 8'b10000011
+  ctrl: 1'b1
+  exp_res: 8'b01101011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 238 - 131'
+- id: TC-SUB-011
+  a: 8'b10111100
+  b: 8'b01010101
+  ctrl: 1'b1
+  exp_res: 8'b01100111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 188 - 85'
+- id: TC-SUB-012
+  a: 8'b00111010
+  b: 8'b01010011
+  ctrl: 1'b1
+  exp_res: 8'b11100111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 58 - 83'
+- id: TC-SUB-013
+  a: 8'b10011111
+  b: 8'b00110111
+  ctrl: 1'b1
+  exp_res: 8'b01101000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 159 - 55'
+- id: TC-SUB-014
+  a: 8'b00001101
+  b: 8'b10011111
+  ctrl: 1'b1
+  exp_res: 8'b01101110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 13 - 159'
+- id: TC-SUB-015
+  a: 8'b11000000
+  b: 8'b11001011
+  ctrl: 1'b1
+  exp_res: 8'b11110101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 192 - 203'
+- id: TC-SUB-016
+  a: 8'b01100101
+  b: 8'b00100110
+  ctrl: 1'b1
+  exp_res: 8'b00111111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 101 - 38'
+- id: TC-SUB-017
+  a: 8'b01111100
+  b: 8'b00110100
+  ctrl: 1'b1
+  exp_res: 8'b01001000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 124 - 52'
+- id: TC-SUB-018
+  a: 8'b10011010
+  b: 8'b00111101
+  ctrl: 1'b1
+  exp_res: 8'b01011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 154 - 61'
+- id: TC-SUB-019
+  a: 8'b00010101
+  b: 8'b10110001
+  ctrl: 1'b1
+  exp_res: 8'b01100100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 21 - 177'
+- id: TC-SUB-020
+  a: 8'b11011011
+  b: 8'b10111101
+  ctrl: 1'b1
+  exp_res: 8'b00011110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 219 - 189'
+- id: TC-SUB-021
+  a: 8'b00100011
+  b: 8'b10101110
+  ctrl: 1'b1
+  exp_res: 8'b01110101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 35 - 174'
+- id: TC-SUB-022
+  a: 8'b00000110
+  b: 8'b11010111
+  ctrl: 1'b1
+  exp_res: 8'b00101111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 6 - 215'
+- id: TC-SUB-023
+  a: 8'b11111010
+  b: 8'b00110110
+  ctrl: 1'b1
+  exp_res: 8'b11000100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 250 - 54'
+- id: TC-SUB-024
+  a: 8'b11011101
+  b: 8'b10111001
+  ctrl: 1'b1
+  exp_res: 8'b00100100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 221 - 185'
+- id: TC-SUB-025
+  a: 8'b11101011
+  b: 8'b01001110
+  ctrl: 1'b1
+  exp_res: 8'b10011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 235 - 78'
+- id: TC-SUB-026
+  a: 8'b11011110
+  b: 8'b01011010
+  ctrl: 1'b1
+  exp_res: 8'b10000100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 222 - 90'
+- id: TC-SUB-027
+  a: 8'b10001010
+  b: 8'b11110111
+  ctrl: 1'b1
+  exp_res: 8'b10010011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 138 - 247'
+- id: TC-SUB-028
+  a: 8'b11101110
+  b: 8'b11011111
+  ctrl: 1'b1
+  exp_res: 8'b00001111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 238 - 223'
+- id: TC-SUB-029
+  a: 8'b10001001
+  b: 8'b10100101
+  ctrl: 1'b1
+  exp_res: 8'b11100100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 137 - 165'
+- id: TC-SUB-030
+  a: 8'b01111101
+  b: 8'b00101100
+  ctrl: 1'b1
+  exp_res: 8'b01010001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 125 - 44'
+- id: TC-SUB-031
+  a: 8'b10001110
+  b: 8'b11100110
+  ctrl: 1'b1
+  exp_res: 8'b10101000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 142 - 230'
+- id: TC-SUB-032
+  a: 8'b01111100
+  b: 8'b11101101
+  ctrl: 1'b1
+  exp_res: 8'b10001111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 124 - 237'
+- id: TC-SUB-033
+  a: 8'b11000010
+  b: 8'b10101100
+  ctrl: 1'b1
+  exp_res: 8'b00010110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 194 - 172'
+- id: TC-SUB-034
+  a: 8'b00001110
+  b: 8'b11111101
+  ctrl: 1'b1
+  exp_res: 8'b00010001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 14 - 253'
+- id: TC-SUB-035
+  a: 8'b10100110
+  b: 8'b01011101
+  ctrl: 1'b1
+  exp_res: 8'b01001001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 166 - 93'
+- id: TC-SUB-036
+  a: 8'b11111001
+  b: 8'b01101100
+  ctrl: 1'b1
+  exp_res: 8'b10001101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 249 - 108'
+- id: TC-SUB-037
+  a: 8'b10110101
+  b: 8'b10000100
+  ctrl: 1'b1
+  exp_res: 8'b00110001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 181 - 132'
+- id: TC-SUB-038
+  a: 8'b10101110
+  b: 8'b10001111
+  ctrl: 1'b1
+  exp_res: 8'b00011111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 174 - 143'
+- id: TC-SUB-039
+  a: 8'b10001101
+  b: 8'b00000101
+  ctrl: 1'b1
+  exp_res: 8'b10001000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 141 - 5'
+- id: TC-SUB-040
+  a: 8'b01100001
+  b: 8'b00101011
+  ctrl: 1'b1
+  exp_res: 8'b00110110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 97 - 43'
+- id: TC-SUB-041
+  a: 8'b01111011
+  b: 8'b11010000
+  ctrl: 1'b1
+  exp_res: 8'b10101011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 123 - 208'
+- id: TC-SUB-042
+  a: 8'b11111010
+  b: 8'b01111011
+  ctrl: 1'b1
+  exp_res: 8'b01111111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 250 - 123'
+- id: TC-SUB-043
+  a: 8'b11110011
+  b: 8'b11111011
+  ctrl: 1'b1
+  exp_res: 8'b11111000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 243 - 251'
+- id: TC-SUB-044
+  a: 8'b11100101
+  b: 8'b00001000
+  ctrl: 1'b1
+  exp_res: 8'b11011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 229 - 8'
+- id: TC-SUB-045
+  a: 8'b00101111
+  b: 8'b10010110
+  ctrl: 1'b1
+  exp_res: 8'b10011001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 47 - 150'
+- id: TC-SUB-046
+  a: 8'b01110001
+  b: 8'b11001111
+  ctrl: 1'b1
+  exp_res: 8'b10100010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 113 - 207'
+- id: TC-SUB-047
+  a: 8'b01111100
+  b: 8'b10011100
+  ctrl: 1'b1
+  exp_res: 8'b11100000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 124 - 156'
+- id: TC-SUB-048
+  a: 8'b10111100
+  b: 8'b11110010
+  ctrl: 1'b1
+  exp_res: 8'b11001010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 188 - 242'
+- id: TC-SUB-049
+  a: 8'b10110000
+  b: 8'b11011001
+  ctrl: 1'b1
+  exp_res: 8'b11010111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 176 - 217'
+- id: TC-SUB-050
+  a: 8'b10101001
+  b: 8'b10110100
+  ctrl: 1'b1
+  exp_res: 8'b11110101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 169 - 180'
+- id: TC-SUB-051
+  a: 8'b11101000
+  b: 8'b10001010
+  ctrl: 1'b1
+  exp_res: 8'b01011110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 232 - 138'
+- id: TC-SUB-052
+  a: 8'b10011100
+  b: 8'b10000000
+  ctrl: 1'b1
+  exp_res: 8'b00011100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 156 - 128'
+- id: TC-SUB-053
+  a: 8'b01110110
+  b: 8'b00111101
+  ctrl: 1'b1
+  exp_res: 8'b00111001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 118 - 61'
+- id: TC-SUB-054
+  a: 8'b01100010
+  b: 8'b10100001
+  ctrl: 1'b1
+  exp_res: 8'b11000001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 98 - 161'
+- id: TC-SUB-055
+  a: 8'b00111101
+  b: 8'b01011110
+  ctrl: 1'b1
+  exp_res: 8'b11011111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 61 - 94'
+- id: TC-SUB-056
+  a: 8'b01100010
+  b: 8'b01101110
+  ctrl: 1'b1
+  exp_res: 8'b11110100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 98 - 110'
+- id: TC-SUB-057
+  a: 8'b11110111
+  b: 8'b10001101
+  ctrl: 1'b1
+  exp_res: 8'b01101010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 247 - 141'
+- id: TC-SUB-058
+  a: 8'b10010000
+  b: 8'b00110011
+  ctrl: 1'b1
+  exp_res: 8'b01011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 144 - 51'
+- id: TC-SUB-059
+  a: 8'b01100011
+  b: 8'b10010111
+  ctrl: 1'b1
+  exp_res: 8'b11001100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 99 - 151'
+- id: TC-SUB-060
+  a: 8'b01110100
+  b: 8'b10111000
+  ctrl: 1'b1
+  exp_res: 8'b10111100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 116 - 184'
+- id: TC-SUB-061
+  a: 8'b01011011
+  b: 8'b10011010
+  ctrl: 1'b1
+  exp_res: 8'b11000001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 91 - 154'
+- id: TC-SUB-062
+  a: 8'b00000111
+  b: 8'b01000000
+  ctrl: 1'b1
+  exp_res: 8'b11000111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 7 - 64'
+- id: TC-SUB-063
+  a: 8'b10001100
+  b: 8'b00010111
+  ctrl: 1'b1
+  exp_res: 8'b01110101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 140 - 23'
+- id: TC-SUB-064
+  a: 8'b00011011
+  b: 8'b10010101
+  ctrl: 1'b1
+  exp_res: 8'b10000110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 27 - 149'
+- id: TC-SUB-065
+  a: 8'b01000000
+  b: 8'b11111011
+  ctrl: 1'b1
+  exp_res: 8'b01000101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 64 - 251'
+- id: TC-SUB-066
+  a: 8'b00110100
+  b: 8'b00000110
+  ctrl: 1'b1
+  exp_res: 8'b00101110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 52 - 6'
+- id: TC-SUB-067
+  a: 8'b10010001
+  b: 8'b11110000
+  ctrl: 1'b1
+  exp_res: 8'b10100001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 145 - 240'
+- id: TC-SUB-068
+  a: 8'b11110101
+  b: 8'b11100001
+  ctrl: 1'b1
+  exp_res: 8'b00010100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 245 - 225'
+- id: TC-SUB-069
+  a: 8'b10101110
+  b: 8'b01011110
+  ctrl: 1'b1
+  exp_res: 8'b01010000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 174 - 94'
+- id: TC-SUB-070
+  a: 8'b00011010
+  b: 8'b10000001
+  ctrl: 1'b1
+  exp_res: 8'b10011001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 26 - 129'
+- id: TC-SUB-071
+  a: 8'b11110100
+  b: 8'b00111010
+  ctrl: 1'b1
+  exp_res: 8'b10111010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 244 - 58'
+- id: TC-SUB-072
+  a: 8'b00100001
+  b: 8'b11001101
+  ctrl: 1'b1
+  exp_res: 8'b01010100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 33 - 205'
+- id: TC-SUB-073
+  a: 8'b11111011
+  b: 8'b00100101
+  ctrl: 1'b1
+  exp_res: 8'b11010110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 251 - 37'
+- id: TC-SUB-074
+  a: 8'b00011011
+  b: 8'b01001101
+  ctrl: 1'b1
+  exp_res: 8'b11001110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 27 - 77'
+- id: TC-SUB-075
+  a: 8'b01001100
+  b: 8'b10011011
+  ctrl: 1'b1
+  exp_res: 8'b10110001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 76 - 155'
+- id: TC-SUB-076
+  a: 8'b00101011
+  b: 8'b01111111
+  ctrl: 1'b1
+  exp_res: 8'b10101100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 43 - 127'
+- id: TC-SUB-077
+  a: 8'b00111100
+  b: 8'b11010101
+  ctrl: 1'b1
+  exp_res: 8'b01100111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 60 - 213'
+- id: TC-SUB-078
+  a: 8'b01110011
+  b: 8'b11000010
+  ctrl: 1'b1
+  exp_res: 8'b10110001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 115 - 194'
+- id: TC-SUB-079
+  a: 8'b11100110
+  b: 8'b11100010
+  ctrl: 1'b1
+  exp_res: 8'b00000100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 230 - 226'
+- id: TC-SUB-080
+  a: 8'b10011000
+  b: 8'b11011011
+  ctrl: 1'b1
+  exp_res: 8'b10111101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 152 - 219'
+- id: TC-SUB-081
+  a: 8'b10011100
+  b: 8'b00011110
+  ctrl: 1'b1
+  exp_res: 8'b01111110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 156 - 30'
+- id: TC-SUB-082
+  a: 8'b00110010
+  b: 8'b01101010
+  ctrl: 1'b1
+  exp_res: 8'b11001000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 50 - 106'
+- id: TC-SUB-083
+  a: 8'b01101100
+  b: 8'b10000111
+  ctrl: 1'b1
+  exp_res: 8'b11100101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 108 - 135'
+- id: TC-SUB-084
+  a: 8'b00101001
+  b: 8'b01010000
+  ctrl: 1'b1
+  exp_res: 8'b11011001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 41 - 80'
+- id: TC-SUB-085
+  a: 8'b01111010
+  b: 8'b01011000
+  ctrl: 1'b1
+  exp_res: 8'b00100010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 122 - 88'
+- id: TC-SUB-086
+  a: 8'b00100110
+  b: 8'b01010000
+  ctrl: 1'b1
+  exp_res: 8'b11010110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 38 - 80'
+- id: TC-SUB-087
+  a: 8'b00000001
+  b: 8'b11010001
+  ctrl: 1'b1
+  exp_res: 8'b00110000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 1 - 209'
+- id: TC-SUB-088
+  a: 8'b11100110
+  b: 8'b11110000
+  ctrl: 1'b1
+  exp_res: 8'b11110110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 230 - 240'
+- id: TC-SUB-089
+  a: 8'b10010101
+  b: 8'b00010000
+  ctrl: 1'b1
+  exp_res: 8'b10000101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 149 - 16'
+- id: TC-SUB-090
+  a: 8'b01110110
+  b: 8'b10010011
+  ctrl: 1'b1
+  exp_res: 8'b11100011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 118 - 147'
+- id: TC-SUB-091
+  a: 8'b10010000
+  b: 8'b11101000
+  ctrl: 1'b1
+  exp_res: 8'b10101000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 144 - 232'
+- id: TC-SUB-092
+  a: 8'b00100100
+  b: 8'b01110111
+  ctrl: 1'b1
+  exp_res: 8'b10101101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 36 - 119'
+- id: TC-SUB-093
+  a: 8'b10000111
+  b: 8'b01100101
+  ctrl: 1'b1
+  exp_res: 8'b00100010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 135 - 101'
+- id: TC-SUB-094
+  a: 8'b11011001
+  b: 8'b00111010
+  ctrl: 1'b1
+  exp_res: 8'b10011111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 217 - 58'
+- id: TC-SUB-095
+  a: 8'b01110011
+  b: 8'b01001100
+  ctrl: 1'b1
+  exp_res: 8'b00100111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 115 - 76'
+- id: TC-SUB-096
+  a: 8'b10001000
+  b: 8'b01001000
+  ctrl: 1'b1
+  exp_res: 8'b01000000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 136 - 72'
+- id: TC-SUB-097
+  a: 8'b00100100
+  b: 8'b00011110
+  ctrl: 1'b1
+  exp_res: 8'b00000110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 36 - 30'
+- id: TC-SUB-098
+  a: 8'b01010100
+  b: 8'b10011101
+  ctrl: 1'b1
+  exp_res: 8'b10110111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 84 - 157'
+- id: TC-SUB-099
+  a: 8'b10010011
+  b: 8'b11100000
+  ctrl: 1'b1
+  exp_res: 8'b10110011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 147 - 224'
+- id: TC-SUB-100
+  a: 8'b00111111
+  b: 8'b11101111
+  ctrl: 1'b1
+  exp_res: 8'b01010000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 63 - 239'
+- id: TC-SUB-101
+  a: 8'b10011011
+  b: 8'b11001110
+  ctrl: 1'b1
+  exp_res: 8'b11001101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 155 - 206'
+- id: TC-SUB-102
+  a: 8'b10001011
+  b: 8'b11111100
+  ctrl: 1'b1
+  exp_res: 8'b10001111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 139 - 252'
+- id: TC-SUB-103
+  a: 8'b11100000
+  b: 8'b00101001
+  ctrl: 1'b1
+  exp_res: 8'b10110111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 224 - 41'
+- id: TC-SUB-104
+  a: 8'b00010100
+  b: 8'b11011101
+  ctrl: 1'b1
+  exp_res: 8'b00110111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 20 - 221'
+- id: TC-SUB-105
+  a: 8'b10100101
+  b: 8'b10000000
+  ctrl: 1'b1
+  exp_res: 8'b00100101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 165 - 128'
+- id: TC-SUB-106
+  a: 8'b00001101
+  b: 8'b00101110
+  ctrl: 1'b1
+  exp_res: 8'b11011111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 13 - 46'
+- id: TC-SUB-107
+  a: 8'b01110101
+  b: 8'b00001010
+  ctrl: 1'b1
+  exp_res: 8'b01101011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 117 - 10'
+- id: TC-SUB-108
+  a: 8'b10001001
+  b: 8'b00010100
+  ctrl: 1'b1
+  exp_res: 8'b01110101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 137 - 20'
+- id: TC-SUB-109
+  a: 8'b01011001
+  b: 8'b11110000
+  ctrl: 1'b1
+  exp_res: 8'b01101001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 89 - 240'
+- id: TC-SUB-110
+  a: 8'b11100010
+  b: 8'b10001110
+  ctrl: 1'b1
+  exp_res: 8'b01010100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 226 - 142'
+- id: TC-SUB-111
+  a: 8'b01011100
+  b: 8'b11011111
+  ctrl: 1'b1
+  exp_res: 8'b01111101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 92 - 223'
+- id: TC-SUB-112
+  a: 8'b11111011
+  b: 8'b00101110
+  ctrl: 1'b1
+  exp_res: 8'b11001101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 251 - 46'
+- id: TC-SUB-113
+  a: 8'b11110000
+  b: 8'b10110010
+  ctrl: 1'b1
+  exp_res: 8'b00111110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 240 - 178'
+- id: TC-SUB-114
+  a: 8'b11010001
+  b: 8'b10101010
+  ctrl: 1'b1
+  exp_res: 8'b00100111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 209 - 170'
+- id: TC-SUB-115
+  a: 8'b10100100
+  b: 8'b00110101
+  ctrl: 1'b1
+  exp_res: 8'b01101111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 164 - 53'
+- id: TC-SUB-116
+  a: 8'b01010010
+  b: 8'b10101000
+  ctrl: 1'b1
+  exp_res: 8'b10101010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 82 - 168'
+- id: TC-SUB-117
+  a: 8'b11010010
+  b: 8'b11111101
+  ctrl: 1'b1
+  exp_res: 8'b11010101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 210 - 253'
+- id: TC-SUB-118
+  a: 8'b10010011
+  b: 8'b11001101
+  ctrl: 1'b1
+  exp_res: 8'b11000110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 147 - 205'
+- id: TC-SUB-119
+  a: 8'b00010010
+  b: 8'b11101000
+  ctrl: 1'b1
+  exp_res: 8'b00101010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 18 - 232'
+- id: TC-SUB-120
+  a: 8'b00101101
+  b: 8'b10100001
+  ctrl: 1'b1
+  exp_res: 8'b10001100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 45 - 161'
+- id: TC-SUB-121
+  a: 8'b10000001
+  b: 8'b10100101
+  ctrl: 1'b1
+  exp_res: 8'b11011100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 129 - 165'
+- id: TC-SUB-122
+  a: 8'b00111011
+  b: 8'b11001110
+  ctrl: 1'b1
+  exp_res: 8'b01101101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 59 - 206'
+- id: TC-SUB-123
+  a: 8'b00000000
+  b: 8'b11101100
+  ctrl: 1'b1
+  exp_res: 8'b00010100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 0 - 236'
+- id: TC-SUB-124
+  a: 8'b11010011
+  b: 8'b00011011
+  ctrl: 1'b1
+  exp_res: 8'b10111000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 211 - 27'
+- id: TC-SUB-125
+  a: 8'b01100000
+  b: 8'b10111001
+  ctrl: 1'b1
+  exp_res: 8'b10100111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 96 - 185'
+- id: TC-SUB-126
+  a: 8'b11111111
+  b: 8'b11100010
+  ctrl: 1'b1
+  exp_res: 8'b00011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 255 - 226'
+- id: TC-SUB-127
+  a: 8'b00011010
+  b: 8'b01101000
+  ctrl: 1'b1
+  exp_res: 8'b10110010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 26 - 104'
+- id: TC-SUB-128
+  a: 8'b10001000
+  b: 8'b01000011
+  ctrl: 1'b1
+  exp_res: 8'b01000101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 136 - 67'
+- id: TC-SUB-129
+  a: 8'b10010011
+  b: 8'b11100000
+  ctrl: 1'b1
+  exp_res: 8'b10110011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 147 - 224'
+- id: TC-SUB-130
+  a: 8'b11111000
+  b: 8'b00111110
+  ctrl: 1'b1
+  exp_res: 8'b10111010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 248 - 62'
+- id: TC-SUB-131
+  a: 8'b00001110
+  b: 8'b01111010
+  ctrl: 1'b1
+  exp_res: 8'b10010100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 14 - 122'
+- id: TC-SUB-132
+  a: 8'b01010001
+  b: 8'b10011111
+  ctrl: 1'b1
+  exp_res: 8'b10110010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 81 - 159'
+- id: TC-SUB-133
+  a: 8'b00000111
+  b: 8'b11010000
+  ctrl: 1'b1
+  exp_res: 8'b00110111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 7 - 208'
+- id: TC-SUB-134
+  a: 8'b00101111
+  b: 8'b01110011
+  ctrl: 1'b1
+  exp_res: 8'b10111100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 47 - 115'
+- id: TC-SUB-135
+  a: 8'b00111010
+  b: 8'b11101100
+  ctrl: 1'b1
+  exp_res: 8'b01001110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 58 - 236'
+- id: TC-SUB-136
+  a: 8'b00111100
+  b: 8'b01001110
+  ctrl: 1'b1
+  exp_res: 8'b11101110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 60 - 78'
+- id: TC-SUB-137
+  a: 8'b11111111
+  b: 8'b10010101
+  ctrl: 1'b1
+  exp_res: 8'b01101010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 255 - 149'
+- id: TC-SUB-138
+  a: 8'b10001011
+  b: 8'b11010100
+  ctrl: 1'b1
+  exp_res: 8'b10110111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 139 - 212'
+- id: TC-SUB-139
+  a: 8'b11110111
+  b: 8'b11110001
+  ctrl: 1'b1
+  exp_res: 8'b00000110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 247 - 241'
+- id: TC-SUB-140
+  a: 8'b01111100
+  b: 8'b11101001
+  ctrl: 1'b1
+  exp_res: 8'b10010011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 124 - 233'
+- id: TC-SUB-141
+  a: 8'b01001010
+  b: 8'b11000100
+  ctrl: 1'b1
+  exp_res: 8'b10000110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 74 - 196'
+- id: TC-SUB-142
+  a: 8'b01100001
+  b: 8'b01000101
+  ctrl: 1'b1
+  exp_res: 8'b00011100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 97 - 69'
+- id: TC-SUB-143
+  a: 8'b00100011
+  b: 8'b10001101
+  ctrl: 1'b1
+  exp_res: 8'b10010110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 35 - 141'
+- id: TC-SUB-144
+  a: 8'b11010100
+  b: 8'b10101110
+  ctrl: 1'b1
+  exp_res: 8'b00100110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 212 - 174'
+- id: TC-SUB-145
+  a: 8'b10001000
+  b: 8'b00000001
+  ctrl: 1'b1
+  exp_res: 8'b10000111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 136 - 1'
+- id: TC-SUB-146
+  a: 8'b10010000
+  b: 8'b10011000
+  ctrl: 1'b1
+  exp_res: 8'b11111000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 144 - 152'
+- id: TC-SUB-147
+  a: 8'b11111010
+  b: 8'b01001100
+  ctrl: 1'b1
+  exp_res: 8'b10101110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 250 - 76'
+- id: TC-SUB-148
+  a: 8'b11100100
+  b: 8'b11110111
+  ctrl: 1'b1
+  exp_res: 8'b11101101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 228 - 247'
+- id: TC-SUB-149
+  a: 8'b10110000
+  b: 8'b10101010
+  ctrl: 1'b1
+  exp_res: 8'b00000110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 176 - 170'
+- id: TC-SUB-150
+  a: 8'b11000001
+  b: 8'b11101001
+  ctrl: 1'b1
+  exp_res: 8'b11011000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 193 - 233'
+- id: TC-SUB-151
+  a: 8'b10100100
+  b: 8'b01100000
+  ctrl: 1'b1
+  exp_res: 8'b01000100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 164 - 96'
+- id: TC-SUB-152
+  a: 8'b01111010
+  b: 8'b11000100
+  ctrl: 1'b1
+  exp_res: 8'b10110110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 122 - 196'
+- id: TC-SUB-153
+  a: 8'b01110111
+  b: 8'b11010010
+  ctrl: 1'b1
+  exp_res: 8'b10100101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 119 - 210'
+- id: TC-SUB-154
+  a: 8'b00010110
+  b: 8'b10100010
+  ctrl: 1'b1
+  exp_res: 8'b01110100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 22 - 162'
+- id: TC-SUB-155
+  a: 8'b11110010
+  b: 8'b11000011
+  ctrl: 1'b1
+  exp_res: 8'b00101111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 242 - 195'
+- id: TC-SUB-156
+  a: 8'b11000101
+  b: 8'b01001101
+  ctrl: 1'b1
+  exp_res: 8'b01111000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 197 - 77'
+- id: TC-SUB-157
+  a: 8'b11111101
+  b: 8'b00010010
+  ctrl: 1'b1
+  exp_res: 8'b11101011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 253 - 18'
+- id: TC-SUB-158
+  a: 8'b01000000
+  b: 8'b10101001
+  ctrl: 1'b1
+  exp_res: 8'b10010111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 64 - 169'
+- id: TC-SUB-159
+  a: 8'b00110011
+  b: 8'b11100001
+  ctrl: 1'b1
+  exp_res: 8'b01010010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 51 - 225'
+- id: TC-SUB-160
+  a: 8'b00110011
+  b: 8'b11101001
+  ctrl: 1'b1
+  exp_res: 8'b01001010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 51 - 233'
+- id: TC-SUB-161
+  a: 8'b00000111
+  b: 8'b01001001
+  ctrl: 1'b1
+  exp_res: 8'b10111110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 7 - 73'
+- id: TC-SUB-162
+  a: 8'b11010001
+  b: 8'b01001111
+  ctrl: 1'b1
+  exp_res: 8'b10000010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 209 - 79'
+- id: TC-SUB-163
+  a: 8'b00100110
+  b: 8'b11110000
+  ctrl: 1'b1
+  exp_res: 8'b00110110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 38 - 240'
+- id: TC-SUB-164
+  a: 8'b10000111
+  b: 8'b10101101
+  ctrl: 1'b1
+  exp_res: 8'b11011010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 135 - 173'
+- id: TC-SUB-165
+  a: 8'b11001011
+  b: 8'b00101001
+  ctrl: 1'b1
+  exp_res: 8'b10100010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 203 - 41'
+- id: TC-SUB-166
+  a: 8'b10101000
+  b: 8'b11000010
+  ctrl: 1'b1
+  exp_res: 8'b11100110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 168 - 194'
+- id: TC-SUB-167
+  a: 8'b10100010
+  b: 8'b11111001
+  ctrl: 1'b1
+  exp_res: 8'b10101001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 162 - 249'
+- id: TC-SUB-168
+  a: 8'b00010010
+  b: 8'b00100011
+  ctrl: 1'b1
+  exp_res: 8'b11101111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 18 - 35'
+- id: TC-SUB-169
+  a: 8'b01111000
+  b: 8'b10010011
+  ctrl: 1'b1
+  exp_res: 8'b11100101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 120 - 147'
+- id: TC-SUB-170
+  a: 8'b01110100
+  b: 8'b00101110
+  ctrl: 1'b1
+  exp_res: 8'b01000110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 116 - 46'
+- id: TC-SUB-171
+  a: 8'b11011110
+  b: 8'b00110010
+  ctrl: 1'b1
+  exp_res: 8'b10101100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 222 - 50'
+- id: TC-SUB-172
+  a: 8'b00110011
+  b: 8'b11100011
+  ctrl: 1'b1
+  exp_res: 8'b01010000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 51 - 227'
+- id: TC-SUB-173
+  a: 8'b01010101
+  b: 8'b10011001
+  ctrl: 1'b1
+  exp_res: 8'b10111100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 85 - 153'
+- id: TC-SUB-174
+  a: 8'b00001110
+  b: 8'b00010111
+  ctrl: 1'b1
+  exp_res: 8'b11110111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 14 - 23'
+- id: TC-SUB-175
+  a: 8'b10100110
+  b: 8'b00011100
+  ctrl: 1'b1
+  exp_res: 8'b10001010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 166 - 28'
+- id: TC-SUB-176
+  a: 8'b10010110
+  b: 8'b10110111
+  ctrl: 1'b1
+  exp_res: 8'b11011111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 150 - 183'
+- id: TC-SUB-177
+  a: 8'b10111111
+  b: 8'b11011100
+  ctrl: 1'b1
+  exp_res: 8'b11100011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 191 - 220'
+- id: TC-SUB-178
+  a: 8'b01001010
+  b: 8'b01111101
+  ctrl: 1'b1
+  exp_res: 8'b11001101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 74 - 125'
+- id: TC-SUB-179
+  a: 8'b11010010
+  b: 8'b01011100
+  ctrl: 1'b1
+  exp_res: 8'b01110110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 210 - 92'
+- id: TC-SUB-180
+  a: 8'b01010111
+  b: 8'b01011001
+  ctrl: 1'b1
+  exp_res: 8'b11111110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 87 - 89'
+- id: TC-SUB-181
+  a: 8'b00101000
+  b: 8'b11000011
+  ctrl: 1'b1
+  exp_res: 8'b01100101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 40 - 195'
+- id: TC-SUB-182
+  a: 8'b01111011
+  b: 8'b11111110
+  ctrl: 1'b1
+  exp_res: 8'b01111101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 123 - 254'
+- id: TC-SUB-183
+  a: 8'b01001001
+  b: 8'b01110110
+  ctrl: 1'b1
+  exp_res: 8'b11010011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 73 - 118'
+- id: TC-SUB-184
+  a: 8'b11101100
+  b: 8'b10000010
+  ctrl: 1'b1
+  exp_res: 8'b01101010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 236 - 130'
+- id: TC-SUB-185
+  a: 8'b11101011
+  b: 8'b10000010
+  ctrl: 1'b1
+  exp_res: 8'b01101001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 235 - 130'
+- id: TC-SUB-186
+  a: 8'b00000100
+  b: 8'b11101110
+  ctrl: 1'b1
+  exp_res: 8'b00010110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 4 - 238'
+- id: TC-SUB-187
+  a: 8'b10010011
+  b: 8'b01010000
+  ctrl: 1'b1
+  exp_res: 8'b01000011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 147 - 80'
+- id: TC-SUB-188
+  a: 8'b00100101
+  b: 8'b11100010
+  ctrl: 1'b1
+  exp_res: 8'b01000011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 37 - 226'
+- id: TC-SUB-189
+  a: 8'b10110000
+  b: 8'b10011001
+  ctrl: 1'b1
+  exp_res: 8'b00010111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 176 - 153'
+- id: TC-SUB-190
+  a: 8'b11011001
+  b: 8'b10000000
+  ctrl: 1'b1
+  exp_res: 8'b01011001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 217 - 128'
+- id: TC-SUB-191
+  a: 8'b11101001
+  b: 8'b10011010
+  ctrl: 1'b1
+  exp_res: 8'b01001111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 233 - 154'
+- id: TC-SUB-192
+  a: 8'b01100101
+  b: 8'b11000100
+  ctrl: 1'b1
+  exp_res: 8'b10100001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 101 - 196'
+- id: TC-SUB-193
+  a: 8'b11110111
+  b: 8'b00110110
+  ctrl: 1'b1
+  exp_res: 8'b11000001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 247 - 54'
+- id: TC-SUB-194
+  a: 8'b01111001
+  b: 8'b11000011
+  ctrl: 1'b1
+  exp_res: 8'b10110110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 121 - 195'
+- id: TC-SUB-195
+  a: 8'b10110111
+  b: 8'b10010111
+  ctrl: 1'b1
+  exp_res: 8'b00100000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 183 - 151'
+- id: TC-SUB-196
+  a: 8'b10010111
+  b: 8'b00001011
+  ctrl: 1'b1
+  exp_res: 8'b10001100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 151 - 11'
+- id: TC-SUB-197
+  a: 8'b11001010
+  b: 8'b10001100
+  ctrl: 1'b1
+  exp_res: 8'b00111110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 202 - 140'
+- id: TC-SUB-198
+  a: 8'b00000100
+  b: 8'b00011001
+  ctrl: 1'b1
+  exp_res: 8'b11101011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 4 - 25'
+- id: TC-SUB-199
+  a: 8'b11111110
+  b: 8'b10010010
+  ctrl: 1'b1
+  exp_res: 8'b01101100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 254 - 146'
+- id: TC-SUB-200
+  a: 8'b01110101
+  b: 8'b10110100
+  ctrl: 1'b1
+  exp_res: 8'b11000001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 117 - 180'
+- id: TC-SUB-201
+  a: 8'b01110000
+  b: 8'b01100001
+  ctrl: 1'b1
+  exp_res: 8'b00001111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 112 - 97'
+- id: TC-SUB-202
+  a: 8'b10000000
+  b: 8'b01000110
+  ctrl: 1'b1
+  exp_res: 8'b00111010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 128 - 70'
+- id: TC-SUB-203
+  a: 8'b00110001
+  b: 8'b00010100
+  ctrl: 1'b1
+  exp_res: 8'b00011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 49 - 20'
+- id: TC-SUB-204
+  a: 8'b10011110
+  b: 8'b11100001
+  ctrl: 1'b1
+  exp_res: 8'b10111101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 158 - 225'
+- id: TC-SUB-205
+  a: 8'b00010001
+  b: 8'b10111010
+  ctrl: 1'b1
+  exp_res: 8'b01010111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 17 - 186'
+- id: TC-SUB-206
+  a: 8'b01000011
+  b: 8'b00101110
+  ctrl: 1'b1
+  exp_res: 8'b00010101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 67 - 46'
+- id: TC-SUB-207
+  a: 8'b10010111
+  b: 8'b10100111
+  ctrl: 1'b1
+  exp_res: 8'b11110000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 151 - 167'
+- id: TC-SUB-208
+  a: 8'b11010100
+  b: 8'b01011001
+  ctrl: 1'b1
+  exp_res: 8'b01111011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 212 - 89'
+- id: TC-SUB-209
+  a: 8'b01100110
+  b: 8'b01000011
+  ctrl: 1'b1
+  exp_res: 8'b00100011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 102 - 67'
+- id: TC-SUB-210
+  a: 8'b10111011
+  b: 8'b10001011
+  ctrl: 1'b1
+  exp_res: 8'b00110000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 187 - 139'
+- id: TC-SUB-211
+  a: 8'b01010100
+  b: 8'b10000011
+  ctrl: 1'b1
+  exp_res: 8'b11010001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 84 - 131'
+- id: TC-SUB-212
+  a: 8'b11110110
+  b: 8'b10010111
+  ctrl: 1'b1
+  exp_res: 8'b01011111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 246 - 151'
+- id: TC-SUB-213
+  a: 8'b10101101
+  b: 8'b00111010
+  ctrl: 1'b1
+  exp_res: 8'b01110011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 173 - 58'
+- id: TC-SUB-214
+  a: 8'b11101111
+  b: 8'b00100110
+  ctrl: 1'b1
+  exp_res: 8'b11001001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 239 - 38'
+- id: TC-SUB-215
+  a: 8'b01001000
+  b: 8'b01110011
+  ctrl: 1'b1
+  exp_res: 8'b11010101
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 72 - 115'
+- id: TC-SUB-216
+  a: 8'b11001011
+  b: 8'b10111011
+  ctrl: 1'b1
+  exp_res: 8'b00010000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 203 - 187'
+- id: TC-SUB-217
+  a: 8'b00101110
+  b: 8'b11001010
+  ctrl: 1'b1
+  exp_res: 8'b01100100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 46 - 202'
+- id: TC-SUB-218
+  a: 8'b00000111
+  b: 8'b10000111
+  ctrl: 1'b1
+  exp_res: 8'b10000000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 7 - 135'
+- id: TC-SUB-219
+  a: 8'b00111111
+  b: 8'b11101000
+  ctrl: 1'b1
+  exp_res: 8'b01010111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 63 - 232'
+- id: TC-SUB-220
+  a: 8'b10111100
+  b: 8'b10000110
+  ctrl: 1'b1
+  exp_res: 8'b00110110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 188 - 134'
+- id: TC-SUB-221
+  a: 8'b11000011
+  b: 8'b10111110
+  ctrl: 1'b1
+  exp_res: 8'b00000101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 195 - 190'
+- id: TC-SUB-222
+  a: 8'b00110111
+  b: 8'b01110111
+  ctrl: 1'b1
+  exp_res: 8'b11000000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 55 - 119'
+- id: TC-SUB-223
+  a: 8'b11110001
+  b: 8'b00001100
+  ctrl: 1'b1
+  exp_res: 8'b11100101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 241 - 12'
+- id: TC-SUB-224
+  a: 8'b10100111
+  b: 8'b01110001
+  ctrl: 1'b1
+  exp_res: 8'b00110110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 167 - 113'
+- id: TC-SUB-225
+  a: 8'b00100000
+  b: 8'b11101101
+  ctrl: 1'b1
+  exp_res: 8'b00110011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 32 - 237'
+- id: TC-SUB-226
+  a: 8'b10011010
+  b: 8'b11010001
+  ctrl: 1'b1
+  exp_res: 8'b11001001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 154 - 209'
+- id: TC-SUB-227
+  a: 8'b00111011
+  b: 8'b01000111
+  ctrl: 1'b1
+  exp_res: 8'b11110100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 59 - 71'
+- id: TC-SUB-228
+  a: 8'b00010111
+  b: 8'b00010011
+  ctrl: 1'b1
+  exp_res: 8'b00000100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 23 - 19'
+- id: TC-SUB-229
+  a: 8'b10011011
+  b: 8'b11111100
+  ctrl: 1'b1
+  exp_res: 8'b10011111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 155 - 252'
+- id: TC-SUB-230
+  a: 8'b00111011
+  b: 8'b00110001
+  ctrl: 1'b1
+  exp_res: 8'b00001010
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 59 - 49'
+- id: TC-SUB-231
+  a: 8'b01111000
+  b: 8'b01000101
+  ctrl: 1'b1
+  exp_res: 8'b00110011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 120 - 69'
+- id: TC-SUB-232
+  a: 8'b11000110
+  b: 8'b11101000
+  ctrl: 1'b1
+  exp_res: 8'b11011110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 198 - 232'
+- id: TC-SUB-233
+  a: 8'b10111101
+  b: 8'b11010110
+  ctrl: 1'b1
+  exp_res: 8'b11100111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 189 - 214'
+- id: TC-SUB-234
+  a: 8'b01001111
+  b: 8'b11010100
+  ctrl: 1'b1
+  exp_res: 8'b01111011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 79 - 212'
+- id: TC-SUB-235
+  a: 8'b00110010
+  b: 8'b11111010
+  ctrl: 1'b1
+  exp_res: 8'b00111000
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 50 - 250'
+- id: TC-SUB-236
+  a: 8'b11010000
+  b: 8'b10001111
+  ctrl: 1'b1
+  exp_res: 8'b01000001
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 208 - 143'
+- id: TC-SUB-237
+  a: 8'b00010000
+  b: 8'b10111101
+  ctrl: 1'b1
+  exp_res: 8'b01010011
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 16 - 189'
+- id: TC-SUB-238
+  a: 8'b01101111
+  b: 8'b11100011
+  ctrl: 1'b1
+  exp_res: 8'b10001100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 111 - 227'
+- id: TC-SUB-239
+  a: 8'b11100011
+  b: 8'b01111000
+  ctrl: 1'b1
+  exp_res: 8'b01101011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 227 - 120'
+- id: TC-SUB-240
+  a: 8'b10111001
+  b: 8'b00110010
+  ctrl: 1'b1
+  exp_res: 8'b10000111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 185 - 50'
+- id: TC-SUB-241
+  a: 8'b10111100
+  b: 8'b10110111
+  ctrl: 1'b1
+  exp_res: 8'b00000101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 188 - 183'
+- id: TC-SUB-242
+  a: 8'b00011111
+  b: 8'b11001011
+  ctrl: 1'b1
+  exp_res: 8'b01010100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 31 - 203'
+- id: TC-SUB-243
+  a: 8'b10001101
+  b: 8'b01100001
+  ctrl: 1'b1
+  exp_res: 8'b00101100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 141 - 97'
+- id: TC-SUB-244
+  a: 8'b00111110
+  b: 8'b11101000
+  ctrl: 1'b1
+  exp_res: 8'b01010110
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 62 - 232'
+- id: TC-SUB-245
+  a: 8'b00101110
+  b: 8'b01101100
+  ctrl: 1'b1
+  exp_res: 8'b11000010
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 46 - 108'
+- id: TC-SUB-246
+  a: 8'b00001010
+  b: 8'b00011001
+  ctrl: 1'b1
+  exp_res: 8'b11110001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 10 - 25'
+- id: TC-SUB-247
+  a: 8'b10101010
+  b: 8'b01111100
+  ctrl: 1'b1
+  exp_res: 8'b00101110
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 170 - 124'
+- id: TC-SUB-248
+  a: 8'b01000000
+  b: 8'b01101001
+  ctrl: 1'b1
+  exp_res: 8'b11010111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 64 - 105'
+- id: TC-SUB-249
+  a: 8'b00100011
+  b: 8'b01101010
+  ctrl: 1'b1
+  exp_res: 8'b10111001
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 35 - 106'
+- id: TC-SUB-250
+  a: 8'b01101110
+  b: 8'b01110111
+  ctrl: 1'b1
+  exp_res: 8'b11110111
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 110 - 119'
+- id: TC-SUB-251
+  a: 8'b10101000
+  b: 8'b01001011
+  ctrl: 1'b1
+  exp_res: 8'b01011101
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 168 - 75'
+- id: TC-SUB-252
+  a: 8'b00000001
+  b: 8'b10001101
+  ctrl: 1'b1
+  exp_res: 8'b01110100
+  exp_cb: 1'b1
+  type: SUB
+  desc: 'Subtraction: 1 - 141'
+- id: TC-SUB-253
+  a: 8'b01001010
+  b: 8'b01000010
+  ctrl: 1'b1
+  exp_res: 8'b00001000
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 74 - 66'
+- id: TC-SUB-254
+  a: 8'b10000000
+  b: 8'b01011001
+  ctrl: 1'b1
+  exp_res: 8'b00100111
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 128 - 89'
+- id: TC-SUB-255
+  a: 8'b00111000
+  b: 8'b00001101
+  ctrl: 1'b1
+  exp_res: 8'b00101011
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 56 - 13'
+- id: TC-SUB-256
+  a: 8'b01000011
+  b: 8'b00000111
+  ctrl: 1'b1
+  exp_res: 8'b00111100
+  exp_cb: 1'b0
+  type: SUB
+  desc: 'Subtraction: 67 - 7'

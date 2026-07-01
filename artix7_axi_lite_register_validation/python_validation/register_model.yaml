@@ -1,0 +1,75 @@
+# register_model.yaml
+# Register model specifications for GPIO, Status, and Timer blocks
+
+blocks:
+  gpio:
+    base_addr: 0x00000000
+    registers:
+      GPIO_OUT:
+        offset: 0x00
+        mode: "RW"
+        reset: 0x00000000
+        description: "GPIO output pins, connected directly to board LEDs."
+      GPIO_IN:
+        offset: 0x04
+        mode: "RO"
+        reset: 0x00000000
+        description: "GPIO input pins, reflects board switch inputs."
+      GPIO_DIR:
+        offset: 0x08
+        mode: "RW"
+        reset: 0x00000000
+        description: "GPIO direction register (1=output, 0=input)."
+      SCRATCH:
+        offset: 0x0c
+        mode: "RW"
+        reset: 0x00000000
+        description: "General purpose scratch register."
+
+  status:
+    base_addr: 0x00000100
+    registers:
+      DEVICE_ID:
+        offset: 0x00
+        mode: "RO"
+        reset: 0xA5A50009
+        description: "Fixed Device Identification value."
+      STATUS_FLAGS:
+        offset: 0x04
+        mode: "RO"
+        reset: 0x00000000
+        description: "Status flag registers (bit0=proto_err, bit1=dec_err, bit2=timeout, bit3=reset_in_prog)."
+      ERROR_CLEAR:
+        offset: 0x08
+        mode: "WO"
+        reset: 0x00000000
+        description: "Clear latched errors by writing 1 to corresponding bits."
+      VERSION:
+        offset: 0x0c
+        mode: "RO"
+        reset: 0x00010000
+        description: "Firmware version (major/minor)."
+
+  timer:
+    base_addr: 0x00000200
+    registers:
+      TIMER_CTRL:
+        offset: 0x00
+        mode: "RW"
+        reset: 0x00000000
+        description: "Timer control (bit0=enable, bit1=periodic)."
+      TIMER_COUNT:
+        offset: 0x04
+        mode: "RO"
+        reset: 0x00000000
+        description: "Live timer counter register."
+      TIMER_LIMIT:
+        offset: 0x08
+        mode: "RW"
+        reset: 0x00000000
+        description: "Compare limit value for timer expiration."
+      TIMER_STATUS:
+        offset: 0x0c
+        mode: "RO"
+        reset: 0x00000000
+        description: "Reserved, read-only status."
